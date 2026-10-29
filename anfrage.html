@@ -62,7 +62,7 @@ form.anfrage button[disabled]{opacity:.6;cursor:wait}
     <label>Firma oder Beruf <small>(optional)</small><input name="firma" autocomplete="organization" maxlength="120"></label>
   </div>
   <label>Worum geht es?
-    <select name="thema"><option>NovaOS – eigener Assistent</option><option>Kurs „Dein KI-Mitarbeiter in 7 Tagen“</option><option>Sonstiges</option></select>
+    <select name="thema"><option value="NovaOS – noch unsicher">NovaOS – weiß noch nicht welche Stufe</option><option value="NovaOS Start">NovaOS Start (490 €)</option><option value="NovaOS Plus">NovaOS Plus (990 € Pilotpreis)</option><option value="NovaOS Komplett">NovaOS Komplett (2.490 €)</option><option value="Kurs">Kurs „Dein KI-Mitarbeiter in 7 Tagen“</option><option value="Sonstiges">Sonstiges</option></select>
   </label>
   <label>Was soll dein Assistent für dich erledigen?<textarea name="nachricht" required maxlength="3000" placeholder="z. B. Mails sortieren, Termine planen, Rechnungen im Blick behalten …"></textarea></label>
   <label class="falle" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
@@ -75,7 +75,7 @@ form.anfrage button[disabled]{opacity:.6;cursor:wait}
 <script>
 const ZIEL = "https://macbook-air-von-niklas.tailcd6010.ts.net:8443/jarvis/api/anfrage";
 const f = document.getElementById("anfrage"), m = document.getElementById("meldung"), k = f.querySelector("button");
-const q = new URLSearchParams(location.search); if (q.get("thema") === "kurs") f.thema.selectedIndex = 1;
+const q = new URLSearchParams(location.search); const st = {start: 1, plus: 2, komplett: 3}[q.get("stufe")]; if (st) f.thema.selectedIndex = st; if (q.get("thema") === "kurs") f.thema.selectedIndex = 4;
 function zeig(gut, t) { m.className = "meldung " + (gut ? "gut" : "schlecht"); m.textContent = t; }
 f.onsubmit = async e => {
   e.preventDefault();

@@ -74,6 +74,14 @@ details p{margin:10px 0 0;color:var(--grau)}
 .fuss a{color:var(--grau)}
 @media(max-width:860px){.hero,.produkte,.drei,.schritte{grid-template-columns:1fr}.vier{grid-template-columns:1fr 1fr}.nav a:not(.knopf){display:none}}
 @media(max-width:520px){.vier{grid-template-columns:1fr}}
+.produkte.stufen{grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.produkte.stufen .produkt{padding:26px}
+.produkte.stufen .produkt.haupt{transform:translateY(-8px);box-shadow:0 18px 40px rgba(31,77,58,.25)}
+.hinweis-preise{font-size:.88rem;color:var(--grau);margin:22px 0 28px;max-width:820px}
+.produkt.kurs{flex-direction:row;align-items:center;justify-content:space-between;gap:24px}
+.produkt.kurs .kurs-rechts{display:flex;flex-direction:column;align-items:flex-start;gap:12px;flex:none}
+.produkt.kurs .knopf{margin-top:0}
+@media(max-width:860px){.produkte.stufen{grid-template-columns:1fr}.produkte.stufen .produkt.haupt{transform:none}.produkt.kurs{flex-direction:column;align-items:flex-start}}
 </style></head>
 <body>
 
@@ -126,30 +134,56 @@ details p{margin:10px 0 0;color:var(--grau)}
   <div class="wrap">
     <div class="tag">Das Angebot</div>
     <h2>Fertig eingerichtet oder selbst gebaut.</h2>
-    <p class="einleitung">Du willst einfach, dass es läuft? Dann richten wir NovaOS für dich ein. Du baust lieber selbst? Dann nimm den Leitfaden.</p>
-    <div class="produkte">
-      <div class="produkt haupt">
-        <div class="tag">Für dich eingerichtet</div>
-        <h3>Dein eigener NovaOS</h3>
-        <div class="preis">Auf Anfrage<small>Persönliches Angebot nach einem kurzen Gespräch</small></div>
+    <p class="einleitung">Du willst einfach, dass es läuft? Dann richten wir NovaOS für dich ein – in drei Stufen, je nachdem, was er für dich erledigen soll. Du baust lieber selbst? Dann nimm den Leitfaden.</p>
+    <div class="produkte stufen">
+      <div class="produkt">
+        <div class="tag">Der Einstieg</div>
+        <h3>NovaOS Start</h3>
+        <div class="preis">490 €<small>einmalig · Einrichtung per Videocall</small></div>
         <ul class="haken">
-          <li>Persönlichkeit und Gedächtnis auf dich zugeschnitten</li>
-          <li>Postfach, Kalender und Morgen-Briefing angebunden</li>
-          <li>Erreichbar per Chat und auf Wunsch per Telefon</li>
-          <li>Klare Regeln, was er darf und was nicht</li>
+          <li>Dein Assistent im Chat, auf Handy und Mac</li>
+          <li>Mails sortieren und zusammenfassen</li>
+          <li>Kalender und Termine</li>
+          <li>Gedächtnis, das dich und dein Geschäft kennt</li>
         </ul>
-        <a class="knopf" href="anfrage.html">Jetzt anfragen</a>
+        <a class="knopf hohl" href="anfrage.html?stufe=start">Start anfragen</a>
+      </div>
+      <div class="produkt haupt">
+        <div class="tag">Unsere Empfehlung</div>
+        <h3>NovaOS Plus</h3>
+        <div class="preis">990 €<small>Pilotpreis für die ersten 5 Kunden, danach 1.490 € · einmalig</small></div>
+        <ul class="haken">
+          <li>Alles aus Start</li>
+          <li>Sprich mit ihm am Schreibtisch</li>
+          <li>Dein Cockpit mit Tag, Aufgaben und Zahlen</li>
+          <li>Briefing morgens und abends</li>
+          <li>Rechnungen per Foto – er trägt sie ein</li>
+        </ul>
+        <a class="knopf" href="anfrage.html?stufe=plus">Plus anfragen</a>
       </div>
       <div class="produkt">
-        <div class="tag">Zum Selbermachen</div>
-        <h3>Dein KI-Mitarbeiter in 7 Tagen</h3>
-        <div class="preis">27 €<small>Einführungspreis · Kleinunternehmer, keine Umsatzsteuer nach § 19 UStG</small></div>
+        <div class="tag">Alles drin</div>
+        <h3>NovaOS Komplett</h3>
+        <div class="preis">2.490 €<small>einmalig · Telefon-Abo 3 Monate inklusive</small></div>
         <ul class="haken">
-          <li>Praxis-Leitfaden als PDF, eine Seite pro Tag</li>
-          <li>Fertige Vorlagen zum Kopieren</li>
-          <li>Ohne Programmieren</li>
-          <li>Sofort-Download nach dem Kauf</li>
+          <li>Alles aus Plus</li>
+          <li>Eigene Telefonnummer – ruf ihn einfach an</li>
+          <li>Steuert Licht, Fernseher und Lautsprecher</li>
+          <li>Arbeitet im Hintergrund an eigenen Aufgaben</li>
+          <li>30 Tage Feinschliff nach dem Start</li>
         </ul>
+        <a class="knopf hohl" href="anfrage.html?stufe=komplett">Komplett anfragen</a>
+      </div>
+    </div>
+    <p class="hinweis-preise">Alle Preise einmalig und ohne Umsatzsteuer (Kleinunternehmer nach § 19 UStG). Zahlung per Rechnung, die Einrichtung startet nach Zahlungseingang. Laufend kommt dein eigenes Claude-Abo dazu, das du direkt bei Anthropic abschließt. Telefon-Abo auf Wunsch: 69 € im Monat.</p>
+    <div class="produkt kurs">
+      <div>
+        <div class="tag">Lieber selbst bauen?</div>
+        <h3>Dein KI-Mitarbeiter in 7 Tagen</h3>
+        <p style="margin:6px 0 0">Der Praxis-Leitfaden als PDF mit fertigen Vorlagen. Ohne Programmieren, Sofort-Download nach dem Kauf.</p>
+      </div>
+      <div class="kurs-rechts">
+        <div class="preis">27 €<small>Einführungspreis · keine USt nach § 19 UStG</small></div>
         <a class="knopf hohl" href="starter.html">Zum Leitfaden</a>
       </div>
     </div>
