@@ -1,1 +1,195 @@
-<!doctype html><html lang=de><meta charset=utf-8><meta name=robots content=noindex><meta name=viewport content="width=device-width,initial-scale=1"><title>Nicht mehr verfügbar</title><body style="margin:0;min-height:100vh;display:grid;place-items:center;background:#0d0e10;color:#ccc;font-family:system-ui,sans-serif"><p>Diese Seite ist nicht mehr verfügbar.</p></body></html>
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA ONE – KI, die für dich arbeitet</title>
+<meta name="description" content="NOVA ONE baut persönliche KI-Assistenten: NovaOS, fertig für dich eingerichtet, und den Praxis-Leitfaden „Dein KI-Mitarbeiter in 7 Tagen“ zum Selbermachen.">
+<style>
+:root{--creme:#F5F1E8;--hell:#FBF8F2;--gruen:#1F4D3A;--tief:#173D2E;--messing:#B0864F;--gold:#E7CF9E;--text:#1C2A23;--grau:#5E6A62;--linie:#D9CFB8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--creme);color:var(--text);font:17px/1.6 -apple-system,"Inter",Helvetica,Arial,sans-serif}
+h1,h2,h3{font-family:Georgia,"Fraunces",serif;color:var(--gruen);line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.3rem,6.5vw,4rem)}
+h2{font-size:clamp(1.7rem,4vw,2.3rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em}
+a{color:var(--gruen)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.kopf{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font:700 1.1rem Georgia,serif;letter-spacing:.08em;color:var(--gruen);text-decoration:none}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--gruen);color:var(--creme);display:grid;place-items:center;font-style:normal;font-size:1.1rem}
+.nav{display:flex;gap:22px;align-items:center}
+.nav a{text-decoration:none;font-size:.95rem;color:var(--text)}
+.nav a.knopf{color:var(--creme)}
+.knopf{display:inline-block;background:var(--gruen);color:var(--creme);text-decoration:none;padding:15px 30px;border-radius:10px;font-weight:600;letter-spacing:.02em;border:0;cursor:pointer;font-size:1rem}
+.knopf:hover{background:var(--tief)}
+.knopf.klein{padding:10px 20px;font-size:.92rem}
+.knopf.hohl{background:transparent;color:var(--gruen);box-shadow:inset 0 0 0 2px var(--gruen)}
+.knopf.hohl:hover{background:var(--gruen);color:var(--creme)}
+.tag{font:600 .78rem -apple-system,Helvetica,sans-serif;letter-spacing:.18em;color:var(--messing);text-transform:uppercase;margin-bottom:.8em}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding:44px 0 80px}
+.hero p.lead{font-size:1.2rem;color:#3E5A4C;max-width:32em}
+.hero em{color:var(--messing);font-style:italic}
+.cta-zeile{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.chat{background:radial-gradient(circle at 75% 20%,#24584A 0,var(--tief) 70%);border-radius:18px;padding:22px;box-shadow:0 24px 50px #173d2e55;border:1px solid #E7CF9E44;display:grid;gap:12px}
+.chat .kopfzeile{display:flex;align-items:center;gap:10px;color:var(--gold);font:600 .72rem sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:4px}
+.chat .kopfzeile span{width:10px;height:10px;border-radius:50%;background:var(--messing);box-shadow:0 0 0 4px #B0864F33}
+.blase{padding:11px 15px;border-radius:14px;font-size:.93rem;max-width:88%;line-height:1.45}
+.blase.du{background:var(--creme);color:var(--text);justify-self:end;border-bottom-right-radius:4px}
+.blase.er{background:#ffffff14;color:var(--creme);border:1px solid #ffffff22;border-bottom-left-radius:4px}
+.sektion{padding:70px 0;border-top:1px solid var(--linie)}
+.sektion.hell{background:var(--hell)}
+.sektion.dunkel{background:var(--gruen);color:var(--creme);border:0}
+.sektion.dunkel h2,.sektion.dunkel h3{color:var(--creme)}
+.sektion.dunkel .tag{color:var(--gold)}
+.einleitung{max-width:40em;color:var(--grau)}
+.drei{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.vier{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+.karte{background:var(--creme);border-top:3px solid var(--gruen);padding:22px;border-radius:0 0 8px 8px}
+.sektion:not(.hell) .karte{background:var(--hell)}
+.karte p{color:var(--grau);margin:0;font-size:.97rem}
+.produkte{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.produkt{background:var(--hell);border:1px solid var(--linie);border-radius:14px;padding:30px;display:flex;flex-direction:column}
+.produkt.haupt{background:var(--gruen);color:var(--creme);border-color:var(--gruen)}
+.produkt.haupt h3{color:var(--creme)}
+.produkt.haupt .tag{color:var(--gold)}
+.produkt.haupt .haken li:before{color:var(--gold)}
+.produkt.haupt .knopf{background:var(--creme);color:var(--gruen)}
+.produkt h3{font-size:1.6rem}
+.produkt .preis{font:700 1.6rem Georgia,serif;margin:6px 0 2px}
+.produkt .preis small{display:block;font:400 .8rem -apple-system,Helvetica,sans-serif;opacity:.75}
+.produkt .knopf{margin-top:auto;align-self:flex-start}
+.haken{list-style:none;padding:0;margin:16px 0 26px;display:grid;gap:8px}
+.haken li{padding-left:28px;position:relative}
+.haken li:before{content:"✓";position:absolute;left:0;color:var(--messing);font-weight:700}
+.schritte{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.schritte li{counter-increment:s;padding:22px;border-left:3px solid var(--gold);background:#ffffff0d;border-radius:0 8px 8px 0}
+.schritte li:before{content:counter(s);display:block;font:700 2rem Georgia,serif;color:var(--gold);line-height:1;margin-bottom:10px}
+.schritte p{margin:0;color:#ffffffcc;font-size:.97rem}
+details{border-bottom:1px solid var(--linie);padding:16px 0}
+summary{cursor:pointer;font:600 1.05rem Georgia,serif;color:var(--gruen)}
+details p{margin:10px 0 0;color:var(--grau)}
+.schluss{text-align:center;max-width:640px;margin:0 auto}
+.fuss{padding:38px 0;color:var(--grau);font-size:.85rem;border-top:1px solid var(--linie)}
+.fuss a{color:var(--grau)}
+@media(max-width:860px){.hero,.produkte,.drei,.schritte{grid-template-columns:1fr}.vier{grid-template-columns:1fr 1fr}.nav a:not(.knopf){display:none}}
+@media(max-width:520px){.vier{grid-template-columns:1fr}}
+</style></head>
+<body>
+
+<div class="wrap">
+  <div class="kopf">
+    <a class="logo" href="#"><i>N</i>NOVA ONE</a>
+    <nav class="nav">
+      <a href="#novaos">NovaOS</a>
+      <a href="#produkte">Angebot</a>
+      <a href="#fragen">Fragen</a>
+      <a class="knopf klein" href="mailto:kontakt@novaone-group.de?subject=NovaOS%20Anfrage">Kontakt</a>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div>
+      <div class="tag">Persönliche KI-Assistenten</div>
+      <h1>KI, die dich kennt <em>und für dich arbeitet.</em></h1>
+      <p class="lead">NOVA ONE baut digitale Assistenten, die sich merken, wer du bist, dein Postfach sortieren, dich morgens briefen und ans Telefon gehen. Kein Chatbot, der jeden Tag bei null anfängt, sondern ein Mitarbeiter, der mitdenkt.</p>
+      <div class="cta-zeile">
+        <a class="knopf" href="#produkte">Angebot ansehen</a>
+        <a class="knopf hohl" href="starter.html">Leitfaden für 27 €</a>
+      </div>
+    </div>
+    <div class="chat" aria-label="Beispiel-Gespräch mit NovaOS">
+      <div class="kopfzeile"><span></span>NovaOS</div>
+      <div class="blase du">Was steht heute an?</div>
+      <div class="blase er">Zwei Termine, eine Rechnung fällig am Freitag und elf neue Mails. Drei davon sind wichtig, der Rest will dir etwas verkaufen.</div>
+      <div class="blase du">Erinner mich an die Rechnung.</div>
+      <div class="blase er">Steht im Kalender, mit Betrag und IBAN. Ich melde mich am Donnerstag.</div>
+    </div>
+  </section>
+</div>
+
+<section class="sektion hell" id="novaos">
+  <div class="wrap">
+    <div class="tag">Was NovaOS kann</div>
+    <h2>Ein Assistent, der den Alltag mitträgt.</h2>
+    <p class="einleitung">NovaOS läuft mit Claude und einem eigenen Gedächtnis. Er kennt deine Vorlieben, deine Kontakte und deine Entscheidungen und wird mit jedem Tag besser.</p>
+    <div class="vier">
+      <div class="karte"><h3>Gedächtnis</h3><p>Wer du bist, was du entschieden hast, wen du kennst: alles ist beim nächsten Gespräch wieder da.</p></div>
+      <div class="karte"><h3>Postfach</h3><p>Mails sortieren, Wichtiges nach oben holen, Antworten vorbereiten, Belege ablegen.</p></div>
+      <div class="karte"><h3>Telefon</h3><p>Du rufst ihn an oder er dich, wenn wirklich etwas brennt. Mit eigener Stimme.</p></div>
+      <div class="karte"><h3>Zuhause</h3><p>Licht, Fernseher und Lautsprecher per Zuruf. Das Morgen-Briefing kommt aus dem Lautsprecher.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sektion" id="produkte">
+  <div class="wrap">
+    <div class="tag">Das Angebot</div>
+    <h2>Fertig eingerichtet oder selbst gebaut.</h2>
+    <p class="einleitung">Du willst einfach, dass es läuft? Dann richten wir NovaOS für dich ein. Du baust lieber selbst? Dann nimm den Leitfaden.</p>
+    <div class="produkte">
+      <div class="produkt haupt">
+        <div class="tag">Für dich eingerichtet</div>
+        <h3>Dein eigener NovaOS</h3>
+        <div class="preis">Auf Anfrage<small>Persönliches Angebot nach einem kurzen Gespräch</small></div>
+        <ul class="haken">
+          <li>Persönlichkeit und Gedächtnis auf dich zugeschnitten</li>
+          <li>Postfach, Kalender und Morgen-Briefing angebunden</li>
+          <li>Erreichbar per Chat und auf Wunsch per Telefon</li>
+          <li>Klare Regeln, was er darf und was nicht</li>
+        </ul>
+        <a class="knopf" href="mailto:kontakt@novaone-group.de?subject=NovaOS%20Anfrage">Jetzt anfragen</a>
+      </div>
+      <div class="produkt">
+        <div class="tag">Zum Selbermachen</div>
+        <h3>Dein KI-Mitarbeiter in 7 Tagen</h3>
+        <div class="preis">27 €<small>Einführungspreis · Kleinunternehmer, keine Umsatzsteuer nach § 19 UStG</small></div>
+        <ul class="haken">
+          <li>Praxis-Leitfaden als PDF, eine Seite pro Tag</li>
+          <li>Fertige Vorlagen zum Kopieren</li>
+          <li>Ohne Programmieren</li>
+          <li>Sofort-Download nach dem Kauf</li>
+        </ul>
+        <a class="knopf hohl" href="starter.html">Zum Leitfaden</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sektion dunkel">
+  <div class="wrap">
+    <div class="tag">So läuft es ab</div>
+    <h2>In drei Schritten zu deinem NovaOS.</h2>
+    <ol class="schritte">
+      <li><h3>Kennenlernen</h3><p>Ein kurzes Gespräch: Was soll dein Assistent für dich erledigen, was nie?</p></li>
+      <li><h3>Einrichten</h3><p>Wir bauen Persönlichkeit, Gedächtnis und Anbindungen und testen alles mit dir.</p></li>
+      <li><h3>Loslegen</h3><p>Ab dann arbeitet er mit. Du sagst, was du brauchst, er kümmert sich.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sektion hell" id="fragen">
+  <div class="wrap" style="max-width:780px">
+    <div class="tag">Häufige Fragen</div>
+    <h2>Gut zu wissen.</h2>
+    <details><summary>Muss ich programmieren können?</summary><p>Nein. Beim fertigen NovaOS übernehmen wir die Technik, und der Leitfaden ist für Menschen ohne Programmierkenntnisse geschrieben.</p></details>
+    <details><summary>Welche KI steckt dahinter?</summary><p>NovaOS nutzt Claude von Anthropic. Dafür brauchst du ein eigenes Claude-Abo, damit deine Daten bei dir bleiben.</p></details>
+    <details><summary>Wo liegen meine Daten?</summary><p>Das Gedächtnis deines Assistenten liegt in einem Ordner, der dir gehört. Du kannst jederzeit hineinschauen, etwas ändern oder löschen.</p></details>
+    <details><summary>Was darf der Assistent?</summary><p>Genau das, was du festlegst. Regeln und Grenzen sind von Anfang an Teil der Einrichtung.</p></details>
+  </div>
+</section>
+
+<section class="sektion">
+  <div class="wrap schluss">
+    <h2>Bereit für deinen eigenen Assistenten?</h2>
+    <p class="einleitung" style="margin:0 auto 26px">Schreib uns, was er für dich erledigen soll. Wir melden uns mit einem Vorschlag.</p>
+    <a class="knopf" href="mailto:kontakt@novaone-group.de?subject=NovaOS%20Anfrage">kontakt@novaone-group.de</a>
+  </div>
+</section>
+
+<footer class="fuss"><div class="wrap">
+  <b>NOVA ONE</b> · Niklas Kupferschmidt, NOVA ONE, Margot-Hielscher-Straße 9, 81249 München · E-Mail: kontakt@novaone-group.de<br>
+  <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="widerruf.html">Widerrufsbelehrung</a><br>
+  Mit Unterstützung von KI erstellt.
+</div></footer>
+</body></html>

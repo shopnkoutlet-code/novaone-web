@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /dl/
+Disallow: /starter-download-l5b5eu41pu9s.html
