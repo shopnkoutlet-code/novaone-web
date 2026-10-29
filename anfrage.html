@@ -84,7 +84,8 @@ f.onsubmit = async e => {
   k.disabled = true; k.textContent = "Wird gesendet …";
   const daten = {name: f.name.value, email: f.email.value, telefon: f.telefon.value, firma: f.firma.value, thema: f.thema.value, nachricht: f.nachricht.value, website: f.website.value, datenschutz: true};
   try {
-    const r = await fetch(ZIEL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(daten)});
+    const ab = new AbortController(), uhr = setTimeout(() => ab.abort(), 12000);
+    const r = await fetch(ZIEL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(daten), signal: ab.signal}); clearTimeout(uhr);
     const j = await r.json();
     if (!j.ok) throw new Error(j.text || "Fehler");
     f.reset(); zeig(true, "Danke! Deine Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden per E-Mail.");
