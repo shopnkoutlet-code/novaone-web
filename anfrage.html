@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index,follow">
+<title>NovaOS anfragen – NOVA ONE</title>
+<style>
+:root{--creme:#F5F1E8;--hell:#FBF8F2;--gruen:#1F4D3A;--tief:#173D2E;--messing:#B0864F;--text:#1C2A23;--grau:#5E6A62;--linie:#D9CFB8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--text);font:17px/1.65 -apple-system,"Inter",Helvetica,Arial,sans-serif}
+h1,h2,h3{font-family:Georgia,"Fraunces",serif;color:var(--gruen);line-height:1.2;margin:1.6em 0 .5em}
+h1{font-size:clamp(2rem,5vw,2.8rem);margin-top:.3em}
+h2{font-size:1.35rem}
+h3{font-size:1.08rem}
+p,ul,ol{margin:0 0 1em}
+li{margin-bottom:.3em}
+a{color:var(--gruen)}
+.wrap{max-width:780px;margin:0 auto;padding:0 22px}
+.kopf{display:flex;justify-content:space-between;align-items:center;padding:18px 0;max-width:1040px;margin:0 auto;padding-left:22px;padding-right:22px}
+.logo{display:flex;align-items:center;gap:10px;font:700 1.1rem Georgia,serif;letter-spacing:.08em;color:var(--gruen);text-decoration:none}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--gruen);color:var(--creme);display:grid;place-items:center;font-style:normal;font-size:1.1rem}
+.tag{font:600 .78rem -apple-system,Helvetica,sans-serif;letter-spacing:.18em;color:var(--messing);text-transform:uppercase;margin:30px 0 .6em}
+main{padding-bottom:60px}
+.box{background:var(--hell);border-left:3px solid var(--messing);padding:20px 24px;border-radius:0 8px 8px 0;margin:0 0 1.2em}
+.box p:last-child{margin:0}
+.knopf{display:inline-block;background:var(--gruen);color:var(--creme);text-decoration:none;padding:15px 30px;border-radius:10px;font-weight:600;letter-spacing:.02em;margin:6px 12px 6px 0}
+.knopf:hover{background:var(--tief)}
+.knopf.zwei{background:var(--creme);color:var(--gruen);border:2px solid var(--gruen)}
+.stand{color:var(--grau);font-size:.9rem}
+.fuss{padding:38px 0;color:var(--grau);font-size:.85rem;border-top:1px solid var(--linie)}
+.fuss a{color:var(--grau)}
+
+form.anfrage{display:grid;gap:14px;margin:26px 0 10px}
+form.anfrage label{display:grid;gap:6px;font-weight:600;font-size:.95rem;color:var(--gruen)}
+form.anfrage label small{font-weight:400;color:var(--grau)}
+form.anfrage input,form.anfrage textarea,form.anfrage select{font:inherit;font-weight:400;color:var(--text);background:#fff;border:1px solid var(--linie);border-radius:10px;padding:12px 14px;width:100%}
+form.anfrage textarea{min-height:140px;resize:vertical}
+form.anfrage .zwei{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:620px){form.anfrage .zwei{grid-template-columns:1fr}}
+form.anfrage .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:var(--text);font-size:.92rem}
+form.anfrage .check input{width:auto;margin-top:4px}
+form.anfrage .falle{position:absolute;left:-9999px;height:0;overflow:hidden}
+form.anfrage button{justify-self:start;background:var(--gruen);color:var(--creme);border:0;border-radius:10px;padding:15px 30px;font:600 1rem inherit;cursor:pointer}
+form.anfrage button[disabled]{opacity:.6;cursor:wait}
+.meldung{padding:16px 18px;border-radius:10px;margin-top:6px;display:none}
+.meldung.gut{display:block;background:#E3EEE6;color:var(--gruen)}
+.meldung.schlecht{display:block;background:#F6E3DC;color:#7a2e18}
+</style></head>
+<body>
+<div class="kopf"><a class="logo" href="/"><i>N</i>NOVA ONE</a></div>
+<main class="wrap">
+<div class="tag">NovaOS</div>
+<h1>Deinen eigenen Assistenten anfragen</h1>
+<p>Erzähl uns kurz, wer du bist und was dein Assistent für dich erledigen soll. Wir melden uns innerhalb von 24 Stunden mit einem Vorschlag für ein kurzes Gespräch. Unverbindlich.</p>
+
+<form class="anfrage" id="anfrage" novalidate>
+  <div class="zwei">
+    <label>Name<input name="name" autocomplete="name" required maxlength="80"></label>
+    <label>E-Mail<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+  </div>
+  <div class="zwei">
+    <label>Telefon <small>(optional)</small><input name="telefon" type="tel" autocomplete="tel" maxlength="40"></label>
+    <label>Firma oder Beruf <small>(optional)</small><input name="firma" autocomplete="organization" maxlength="120"></label>
+  </div>
+  <label>Worum geht es?
+    <select name="thema"><option>NovaOS – eigener Assistent</option><option>Kurs „Dein KI-Mitarbeiter in 7 Tagen“</option><option>Sonstiges</option></select>
+  </label>
+  <label>Was soll dein Assistent für dich erledigen?<textarea name="nachricht" required maxlength="3000" placeholder="z. B. Mails sortieren, Termine planen, Rechnungen im Blick behalten …"></textarea></label>
+  <label class="falle" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+  <label class="check"><input type="checkbox" name="datenschutz" required> <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert werden. Mehr dazu in der <a href="datenschutz.html#kontaktformular">Datenschutzerklärung</a>.</span></label>
+  <button type="submit">Anfrage senden</button>
+  <div class="meldung" id="meldung"></div>
+</form>
+<p style="color:var(--grau);font-size:.92rem">Lieber per E-Mail? Schreib an <a href="mailto:kontakt@novaone-group.de?subject=NovaOS%20Anfrage">kontakt@novaone-group.de</a>.</p>
+</main>
+<script>
+const ZIEL = "https://macbook-air-von-niklas.tailcd6010.ts.net:8443/jarvis/api/anfrage";
+const f = document.getElementById("anfrage"), m = document.getElementById("meldung"), k = f.querySelector("button");
+const q = new URLSearchParams(location.search); if (q.get("thema") === "kurs") f.thema.selectedIndex = 1;
+function zeig(gut, t) { m.className = "meldung " + (gut ? "gut" : "schlecht"); m.textContent = t; }
+f.onsubmit = async e => {
+  e.preventDefault();
+  if (!f.name.value.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(f.email.value.trim()) || f.nachricht.value.trim().length < 5) return zeig(false, "Bitte Name, eine gültige E-Mail-Adresse und eine kurze Nachricht angeben.");
+  if (!f.datenschutz.checked) return zeig(false, "Bitte bestätige noch kurz den Datenschutz-Hinweis.");
+  k.disabled = true; k.textContent = "Wird gesendet …";
+  const daten = {name: f.name.value, email: f.email.value, telefon: f.telefon.value, firma: f.firma.value, thema: f.thema.value, nachricht: f.nachricht.value, website: f.website.value, datenschutz: true};
+  try {
+    const r = await fetch(ZIEL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(daten)});
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.text || "Fehler");
+    f.reset(); zeig(true, "Danke! Deine Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden per E-Mail.");
+    k.textContent = "Gesendet ✓";
+  } catch (x) {
+    k.disabled = false; k.textContent = "Anfrage senden";
+    const betreff = encodeURIComponent("NovaOS Anfrage von " + daten.name), text = encodeURIComponent(daten.nachricht + "\n\n" + daten.name + "\n" + daten.email + (daten.telefon ? "\n" + daten.telefon : ""));
+    m.className = "meldung schlecht"; m.innerHTML = "Das Senden hat gerade nicht geklappt. <a href=\"mailto:kontakt@novaone-group.de?subject=" + betreff + "&body=" + text + "\">Hier klicken, um die Anfrage per E-Mail zu schicken</a> – deine Angaben sind schon eingetragen.";
+  }
+};
+</script>
+<footer class="fuss"><div class="wrap">
+  <b>NOVA ONE</b> · Niklas Kupferschmidt · Margot-Hielscher-Straße 9, 81249 München · kontakt@novaone-group.de<br>
+  <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="widerruf.html">Widerrufsbelehrung</a>
+</div></footer>
+</body></html>
