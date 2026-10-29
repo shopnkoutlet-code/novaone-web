@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Dein erster KI-Mitarbeiter – kostenlose Anleitung | NOVA ONE</title>
+<meta name="description" content="Kostenlose Mini-Anleitung: In drei Schritten zu deinem ersten KI-Mitarbeiter, der echte Aufgaben für dich erledigt.">
+<style>
+:root{--creme:#F5F1E8;--hell:#FBF8F2;--gruen:#1F4D3A;--tief:#173D2E;--messing:#B0864F;--gold:#E7CF9E;--text:#1C2A23;--grau:#5E6A62;--linie:#D9CFB8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--text);font:17px/1.65 -apple-system,"Inter",Helvetica,Arial,sans-serif}
+h1,h2{font-family:Georgia,"Fraunces",serif;color:var(--gruen);line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2rem,6vw,3rem)}
+h2{font-size:clamp(1.35rem,3.5vw,1.7rem)}
+p{margin:0 0 1em}
+a{color:var(--gruen)}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.kopf{display:flex;align-items:center;padding:18px 0}
+.logo{display:flex;align-items:center;gap:10px;font:700 1.1rem Georgia,serif;letter-spacing:.08em;color:var(--gruen);text-decoration:none}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--gruen);color:var(--creme);display:grid;place-items:center;font-style:normal}
+.tag{font:600 .78rem -apple-system,Helvetica,sans-serif;letter-spacing:.18em;color:var(--messing);text-transform:uppercase;margin:24px 0 .8em}
+.lead{font-size:1.15rem;color:#3E5A4C}
+.schritt{background:var(--hell);border:1px solid var(--linie);border-radius:14px;padding:24px;margin:22px 0}
+.schritt .nr{font:700 .8rem -apple-system,Helvetica,sans-serif;letter-spacing:.15em;color:var(--messing)}
+.schritt ul{margin:0 0 .6em;padding-left:1.2em}
+.schritt li{margin:.25em 0}
+.vorlage{background:var(--tief);color:var(--creme);border-radius:12px;padding:18px 18px 14px;font:15px/1.55 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;margin:10px 0 6px}
+.kopie{background:var(--creme);color:var(--gruen);border:0;border-radius:8px;padding:8px 14px;font-weight:600;cursor:pointer}
+.hinweis{font-size:.93rem;color:var(--grau)}
+.weiter{background:var(--gruen);color:var(--creme);border-radius:16px;padding:28px;margin:36px 0}
+.weiter h2{color:var(--creme)}
+.weiter .tag{color:var(--gold);margin-top:0}
+.knopf{display:inline-block;background:var(--creme);color:var(--gruen);text-decoration:none;padding:14px 26px;border-radius:10px;font-weight:600;margin:6px 10px 6px 0}
+.knopf.hohl{background:transparent;color:var(--creme);box-shadow:inset 0 0 0 2px var(--gold)}
+.fuss{padding:30px 0;color:var(--grau);font-size:.85rem;border-top:1px solid var(--linie);margin-top:20px}
+.fuss a{color:var(--grau)}
+</style></head><body>
+<div class="wrap">
+<div class="kopf"><a class="logo" href="/"><i>N</i>NOVA ONE</a></div>
+
+<div class="tag">Kostenlose Anleitung</div>
+<h1>Dein erster KI-Mitarbeiter in 3 Schritten</h1>
+<p class="lead">Du hast „NOVA“ kommentiert – hier ist die Anleitung. Kein Technik-Studium nötig. Nach diesen drei Schritten erledigt deine KI die erste echte Aufgabe für dich.</p>
+
+<div class="schritt">
+  <div class="nr">SCHRITT 1</div>
+  <h2>Such dir eine einzige Aufgabe aus</h2>
+  <p>Der häufigste Fehler: zu viel auf einmal. Nimm eine Aufgabe, die dich jede Woche nervt und immer gleich abläuft, zum Beispiel:</p>
+  <ul><li>Termine aus E-Mails in den Kalender eintragen</li><li>Kundenanfragen vorsortieren und Antworten vorschreiben</li><li>Angebote oder Rechnungstexte vorbereiten</li><li>Notizen nach einem Gespräch zusammenfassen</li></ul>
+  <p class="hinweis">Faustregel: Wenn du die Aufgabe in fünf Sätzen erklären kannst, kann eine KI sie übernehmen.</p>
+</div>
+
+<div class="schritt">
+  <div class="nr">SCHRITT 2</div>
+  <h2>Gib ihr eine feste „Stellenbeschreibung“</h2>
+  <p>Eine KI ohne Rahmen ist wie ein neuer Mitarbeiter ohne Einarbeitung. Schreib einmal auf, wer du bist, was sie tun soll und was sie <b>nie</b> tun darf. Diese Vorlage kannst du kopieren und anpassen:</p>
+  <div class="vorlage" id="vorlage">Du bist mein persönlicher Assistent.
+Über mich: [Name, Firma, was ich mache].
+Deine Aufgabe: [die eine Aufgabe aus Schritt 1].
+So arbeitest du: kurz, klar, auf Deutsch. Wenn dir etwas fehlt, frag nach statt zu raten.
+Das machst du nie ohne mein Ja: Nachrichten verschicken, Geld ausgeben, etwas löschen.
+Am Ende sagst du mir in zwei Sätzen, was du erledigt hast.</div>
+  <button class="kopie" onclick="kopieren()" id="kbtn">Vorlage kopieren</button>
+  <p class="hinweis" style="margin-top:12px">In Claude legst du das z. B. in einem Projekt als Anweisung ab, dann gilt es für jedes Gespräch.</p>
+</div>
+
+<div class="schritt">
+  <div class="nr">SCHRITT 3</div>
+  <h2>Ein echter Test – und dann wöchentlich ausbauen</h2>
+  <p>Gib ihr die Aufgabe mit echtem Material (eine echte Mail, ein echter Termin) und prüf das Ergebnis genau. Passt etwas nicht, ergänzt du die Stellenbeschreibung um eine Regel. So wird sie jede Woche besser.</p>
+  <p>Erst wenn die erste Aufgabe zuverlässig läuft, kommt die nächste dazu – und irgendwann die Verbindung zu Kalender, Mail und Dateien. Genau so ist auch der Assistent aus meinen Videos entstanden.</p>
+</div>
+
+<div class="weiter">
+  <div class="tag">Wie geht's weiter?</div>
+  <h2>Du willst den ganzen Weg?</h2>
+  <p>Im Leitfaden <b>„Dein KI-Mitarbeiter in 7 Tagen“</b> gehen wir das Schritt für Schritt durch – mit allen Vorlagen, Regeln und Verbindungen. Einmalig 27 €, sofort zum Download.</p>
+  <a class="knopf" href="starter.html">Zum Leitfaden (27 €)</a>
+  <p style="margin-top:14px">Keine Zeit, es selbst zu bauen? Wir richten dir deinen Assistenten fertig ein.</p>
+  <a class="knopf hohl" href="index.html#novaos">NovaOS ansehen</a>
+</div>
+</div>
+
+<footer class="fuss"><div class="wrap">
+  <b>NOVA ONE</b> · Niklas Kupferschmidt, NOVA ONE, Margot-Hielscher-Straße 9, 81249 München · E-Mail: kontakt@novaone-group.de<br>
+  <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="widerruf.html">Widerrufsbelehrung</a> · <a href="#" data-cookie-settings>Cookie-Einstellungen</a><br>
+  Mit Unterstützung von KI erstellt.
+</div></footer>
+<script>
+function kopieren(){var t=document.getElementById('vorlage').innerText,b=document.getElementById('kbtn');
+try{navigator.clipboard.writeText(t).then(function(){b.textContent='Kopiert ✓'},function(){b.textContent='Bitte markieren und kopieren'})}catch(e){b.textContent='Bitte markieren und kopieren'}}
+</script>
+<script src="consent.js"></script>
+</body></html>
