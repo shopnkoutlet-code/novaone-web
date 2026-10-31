@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<title>NOVA ONE – KI, die für dich arbeitet</title>
-<meta name="description" content="NOVA ONE baut persönliche KI-Assistenten: NovaOS, fertig für dich eingerichtet, und den Praxis-Leitfaden „Dein KI-Mitarbeiter in 7 Tagen“ zum Selbermachen.">
+<title>NOVA ONE – Angebote nachfassen für Handwerksbetriebe</title>
+<meta name="description" content="NOVA ONE fasst Ihre offenen Angebote nach: Telefon, E-Mail und Brief in Ihrem Namen, damit kein Auftrag liegen bleibt. Dazu Produktbeschreibungen für Online-Händler. Sitz in München.">
 <style>
 :root{--creme:#F5F6F8;--hell:#FFFFFF;--gruen:#2A59D7;--tief:#0E1424;--messing:#2A59D7;--gold:#9CC3FF;--text:#1A1F2B;--grau:#667085;--linie:#D9DDE4}
 *{box-sizing:border-box}
@@ -82,142 +82,161 @@ details p{margin:10px 0 0;color:var(--grau)}
 .produkt.kurs .kurs-rechts{display:flex;flex-direction:column;align-items:flex-start;gap:12px;flex:none}
 .produkt.kurs .knopf{margin-top:0}
 @media(max-width:860px){.produkte.stufen{grid-template-columns:1fr}.produkte.stufen .produkt.haupt{transform:none}.produkt.kurs{flex-direction:column;align-items:flex-start}}
+
+.wv{background:var(--hell);border:1px solid var(--linie);border-radius:14px;box-shadow:0 24px 50px #0E142422;overflow:hidden}
+.wv-kopf{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--linie);font:600 .74rem -apple-system,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--grau)}
+.wv-angebot{padding:16px 18px;border-bottom:1px dashed var(--linie)}
+.wv-angebot span{display:block;color:var(--grau);font-size:.92rem}
+.wv-angebot b{font:700 1.6rem -apple-system,"Inter",Helvetica,Arial,sans-serif;color:var(--tief);font-variant-numeric:tabular-nums}
+.wv ol{list-style:none;margin:0;padding:6px 18px 14px}
+.wv li{display:grid;grid-template-columns:58px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--linie);font-size:.95rem}
+.wv li:last-child{border-bottom:0}
+.wv .tagnr{font:600 .8rem ui-monospace,Menlo,Consolas,monospace;color:var(--grau);padding-top:2px}
+.marke{display:inline-block;margin-top:6px;font:600 .72rem -apple-system,Helvetica,sans-serif;padding:4px 9px;border-radius:999px}
+.marke.warten{background:#FFF3D6;color:#8A5A00}
+.marke.gefasst{background:#E6EEFF;color:var(--gruen)}
+.marke.zusage{background:#DDF3E6;color:#16653E}
+.zahl{font:750 2.6rem -apple-system,"Inter",Helvetica,Arial,sans-serif;color:var(--gruen);line-height:1;margin-bottom:.3em;font-variant-numeric:tabular-nums}
+.quelle{font-size:.82rem;color:var(--grau);margin-top:18px}
+.tabelle{width:100%;border-collapse:collapse;margin-top:26px;font-variant-numeric:tabular-nums;background:var(--hell)}
+.tabelle th,.tabelle td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--linie)}
+.tabelle th{font:600 .74rem -apple-system,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--grau)}
+.tabelle td:last-child,.tabelle th:last-child{text-align:right}
+.tab-wrap{overflow-x:auto}
+.zwei-spalten{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:860px){.zwei-spalten{grid-template-columns:1fr}}
 </style></head>
 <body>
 
 <div class="wrap">
   <div class="kopf">
-    <a class="logo" href="#"><i>N</i>NOVA ONE</a>
+    <a class="logo" href="/"><i>N</i>NOVA ONE</a>
     <nav class="nav">
-      <a href="#novaos">NovaOS</a>
-      <a href="#produkte">Angebot</a>
-      <a href="#fragen">Fragen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#pakete">Pakete</a>
+      <a href="#produkttexte">Produkttexte</a>
       <a class="knopf klein" href="anfrage.html">Kontakt</a>
     </nav>
   </div>
 
   <section class="hero">
     <div>
-      <div class="tag">Persönliche KI-Assistenten</div>
-      <h1>KI, die dich kennt <em>und für dich arbeitet.</em></h1>
-      <p class="lead">NOVA ONE baut digitale Assistenten, die sich merken, wer du bist, dein Postfach sortieren, dich morgens briefen und ans Telefon gehen. Kein Chatbot, der jeden Tag bei null anfängt, sondern ein Mitarbeiter, der mitdenkt.</p>
+      <div class="tag">Angebote nachfassen für Handwerksbetriebe</div>
+      <h1>Ihr Angebot ist raus. <em>Wir sorgen dafür, dass es nicht liegen bleibt.</em></h1>
+      <p class="lead">Mehr als die Hälfte aller Angebote im Handwerk wird nie nachgefasst. Wir übernehmen das für Sie: Wir melden uns in Ihrem Namen bei Ihren Kunden, beantworten Fragen und vereinbaren Termine. Sie erfahren sofort, wenn ein Auftrag zusagt.</p>
       <div class="cta-zeile">
-        <a class="knopf" href="#produkte">Angebot ansehen</a>
-        <a class="knopf hohl" href="starter.html">Leitfaden für 27 €</a>
+        <a class="knopf" href="anfrage.html?thema=probemonat">Probemonat anfragen</a>
+        <a class="knopf hohl" href="#ablauf">So läuft es ab</a>
       </div>
     </div>
-    <div class="chat" aria-label="Beispiel-Gespräch mit NovaOS">
-      <div class="kopfzeile"><span></span>NovaOS</div>
-      <div class="blase du">Was steht heute an?</div>
-      <div class="blase er">Zwei Termine, eine Rechnung fällig am Freitag und elf neue Mails. Drei davon sind wichtig, der Rest will dir etwas verkaufen.</div>
-      <div class="blase du">Erinner mich an die Rechnung.</div>
-      <div class="blase er">Steht im Kalender, mit Betrag und IBAN. Ich melde mich am Donnerstag.</div>
+    <div class="wv" aria-label="Beispiel einer Wiedervorlage">
+      <div class="wv-kopf"><span>Wiedervorlage · Beispiel</span><span>Malerbetrieb</span></div>
+      <div class="wv-angebot"><span>Angebot A-2026-118 · Treppenhaus streichen</span><b>4.860,00 €</b></div>
+      <ol>
+        <li><span class="tagnr">Tag 0</span><div>Angebot verschickt<br><span class="marke warten">wartet auf Antwort</span></div></li>
+        <li><span class="tagnr">Tag 3</span><div>Anruf: Angebot angekommen, Frage zur Farbe geklärt<br><span class="marke gefasst">nachgefasst</span></div></li>
+        <li><span class="tagnr">Tag 10</span><div>Zweiter Kontakt, Vor-Ort-Termin vereinbart<br><span class="marke zusage">Auftrag zugesagt</span></div></li>
+      </ol>
     </div>
   </section>
 </div>
 
-<section class="sektion hell" id="novaos">
+<section class="sektion hell">
   <div class="wrap">
-    <div class="tag">Was NovaOS kann</div>
-    <h2>Ein Assistent, der den Alltag mitträgt.</h2>
-    <p class="einleitung">NovaOS läuft mit Claude und einem eigenen Gedächtnis. Er kennt deine Vorlieben, deine Kontakte und deine Entscheidungen und wird mit jedem Tag besser.</p>
-    <div class="vier">
-      <div class="karte"><h3>Gedächtnis</h3><p>Wer du bist, was du entschieden hast, wen du kennst: alles ist beim nächsten Gespräch wieder da.</p></div>
-      <div class="karte"><h3>Postfach</h3><p>Mails sortieren, Wichtiges nach oben holen, Antworten vorbereiten, Belege ablegen.</p></div>
-      <div class="karte"><h3>Telefon</h3><p>Du rufst ihn an oder er dich, wenn wirklich etwas brennt. Mit eigener Stimme.</p></div>
-      <div class="karte"><h3>Zuhause</h3><p>Licht, Fernseher und Lautsprecher per Zuruf. Das Morgen-Briefing kommt aus dem Lautsprecher.</p></div>
+    <div class="tag">Warum es sich lohnt</div>
+    <h2>Aufträge gehen selten am Preis verloren. Oft fragt einfach niemand nach.</h2>
+    <div class="drei">
+      <div class="karte"><div class="zahl">60 %</div><p>der Angebote von Handwerksbetrieben werden nie aktiv nachgefasst.</p></div>
+      <div class="karte"><div class="zahl">2.–3.</div><p>Kontakt: Erst dann kommen viele Aufträge zustande, nicht beim ersten.</p></div>
+      <div class="karte"><div class="zahl">0 Std.</div><p>Ihr Aufwand fürs Nachfassen. Sie schicken uns die Liste, wir übernehmen den Rest.</p></div>
     </div>
+    <p class="quelle">Quellen: elektro.net, 13.07.2026 („mehr als 60 %“); agentino.de, Ratgeber Angebote nachfassen im Handwerk.</p>
   </div>
 </section>
 
-<section class="sektion" id="produkte">
-  <div class="wrap">
-    <div class="tag">Das Angebot</div>
-    <h2>Fertig eingerichtet oder selbst gebaut.</h2>
-    <p class="einleitung">Du willst einfach, dass es läuft? Dann richten wir NovaOS für dich ein – in drei Stufen, je nachdem, was er für dich erledigen soll. Du baust lieber selbst? Dann nimm den Leitfaden.</p>
-    <div class="produkte stufen">
-      <div class="produkt">
-        <div class="tag">Der Einstieg</div>
-        <h3>NovaOS Start</h3>
-        <div class="preis">490 €<small>einmalig · Einrichtung per Videocall</small></div>
-        <ul class="haken">
-          <li>Dein Assistent im Chat, auf Handy und Mac</li>
-          <li>Mails sortieren und zusammenfassen</li>
-          <li>Kalender und Termine</li>
-          <li>Gedächtnis, das dich und dein Geschäft kennt</li>
-        </ul>
-        <a class="knopf hohl" href="anfrage.html?stufe=start">Start anfragen</a>
-      </div>
-      <div class="produkt haupt">
-        <div class="tag">Unsere Empfehlung</div>
-        <h3>NovaOS Plus</h3>
-        <div class="preis">990 €<small>Pilotpreis für die ersten 5 Kunden, danach 1.490 € · einmalig</small></div>
-        <ul class="haken">
-          <li>Alles aus Start</li>
-          <li>Sprich mit ihm am Schreibtisch</li>
-          <li>Dein Cockpit mit Tag, Aufgaben und Zahlen</li>
-          <li>Briefing morgens und abends</li>
-          <li>Rechnungen per Foto – er trägt sie ein</li>
-        </ul>
-        <a class="knopf" href="anfrage.html?stufe=plus">Plus anfragen</a>
-      </div>
-      <div class="produkt">
-        <div class="tag">Alles drin</div>
-        <h3>NovaOS Komplett</h3>
-        <div class="preis">2.490 €<small>einmalig · Telefon-Abo 3 Monate inklusive</small></div>
-        <ul class="haken">
-          <li>Alles aus Plus</li>
-          <li>Eigene Telefonnummer – ruf ihn einfach an</li>
-          <li>Steuert Licht, Fernseher und Lautsprecher</li>
-          <li>Arbeitet im Hintergrund an eigenen Aufgaben</li>
-          <li>30 Tage Feinschliff nach dem Start</li>
-        </ul>
-        <a class="knopf hohl" href="anfrage.html?stufe=komplett">Komplett anfragen</a>
-      </div>
-    </div>
-    <p class="hinweis-preise">Alle Preise einmalig und ohne Umsatzsteuer (Kleinunternehmer nach § 19 UStG). Zahlung per Rechnung, die Einrichtung startet nach Zahlungseingang. Laufend kommt dein eigenes Claude-Abo dazu, das du direkt bei Anthropic abschließt. Telefon-Abo auf Wunsch: 69 € im Monat.</p>
-    <div class="produkt kurs">
-      <div>
-        <div class="tag">Lieber selbst bauen?</div>
-        <h3>Dein KI-Mitarbeiter in 7 Tagen</h3>
-        <p style="margin:6px 0 0">Der Praxis-Leitfaden als PDF mit fertigen Vorlagen. Ohne Programmieren, Sofort-Download nach dem Kauf.</p>
-      </div>
-      <div class="kurs-rechts">
-        <div class="preis">27 €<small>Einführungspreis · keine USt nach § 19 UStG</small></div>
-        <a class="knopf hohl" href="starter.html">Zum Leitfaden</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sektion dunkel">
+<section class="sektion dunkel" id="ablauf">
   <div class="wrap">
     <div class="tag">So läuft es ab</div>
-    <h2>In drei Schritten zu deinem NovaOS.</h2>
+    <h2>In drei Schritten zu mehr Aufträgen.</h2>
     <ol class="schritte">
-      <li><h3>Kennenlernen</h3><p>Ein kurzes Gespräch: Was soll dein Assistent für dich erledigen, was nie?</p></li>
-      <li><h3>Einrichten</h3><p>Wir bauen Persönlichkeit, Gedächtnis und Anbindungen und testen alles mit dir.</p></li>
-      <li><h3>Loslegen</h3><p>Ab dann arbeitet er mit. Du sagst, was du brauchst, er kümmert sich.</p></li>
+      <li><h3>Liste schicken</h3><p>Sie schicken uns Ihre offenen Angebote mit Kunde, Betrag und Ansprechpartner.</p></li>
+      <li><h3>Wir fassen nach</h3><p>Nach 3 Tagen und, wenn nötig, nach 7 bis 10 Tagen: per Telefon, E-Mail oder Brief, in Ihrem Namen. Fragen klären wir, Termine stimmen wir mit Ihnen ab.</p></li>
+      <li><h3>Sie erfahren alles</h3><p>Jede Woche eine Übersicht: zugesagt, offen, abgesagt, mit Gründen.</p></li>
     </ol>
   </div>
 </section>
 
-<section class="sektion hell" id="fragen">
-  <div class="wrap" style="max-width:780px">
-    <div class="tag">Häufige Fragen</div>
-    <h2>Gut zu wissen.</h2>
-    <details><summary>Muss ich programmieren können?</summary><p>Nein. Beim fertigen NovaOS übernehmen wir die Technik, und der Leitfaden ist für Menschen ohne Programmierkenntnisse geschrieben.</p></details>
-    <details><summary>Welche KI steckt dahinter?</summary><p>NovaOS nutzt Claude von Anthropic. Dafür brauchst du ein eigenes Claude-Abo, damit deine Daten bei dir bleiben.</p></details>
-    <details><summary>Wo liegen meine Daten?</summary><p>Das Gedächtnis deines Assistenten liegt in einem Ordner, der dir gehört. Du kannst jederzeit hineinschauen, etwas ändern oder löschen.</p></details>
-    <details><summary>Was darf der Assistent?</summary><p>Genau das, was du festlegst. Regeln und Grenzen sind von Anfang an Teil der Einrichtung.</p></details>
+<section class="sektion" id="pakete">
+  <div class="wrap">
+    <div class="tag">Pakete</div>
+    <h2>Feste Monatspreise, monatlich kündbar.</h2>
+    <div class="produkte stufen">
+      <div class="produkt">
+        <div class="tag">Zum Kennenlernen</div>
+        <h3>Probemonat</h3>
+        <div class="preis">99 €<small>einmalig · bis 10 offene Angebote</small></div>
+        <ul class="haken"><li>Telefon, E-Mail und Brief</li><li>bis zu 3 Kontakte je Angebot</li><li>Abschlussbericht</li></ul>
+        <a class="knopf hohl" href="anfrage.html?thema=probemonat">Probemonat anfragen</a>
+      </div>
+      <div class="produkt haupt">
+        <div class="tag">Unsere Empfehlung</div>
+        <h3>Start</h3>
+        <div class="preis">199 €<small>pro Monat · bis 20 offene Angebote</small></div>
+        <ul class="haken"><li>bis zu 3 Kontakte je Angebot</li><li>Terminabstimmung mit Ihnen</li><li>Wochenübersicht</li></ul>
+        <a class="knopf" href="anfrage.html?thema=start">Start anfragen</a>
+      </div>
+      <div class="produkt">
+        <div class="tag">Für volle Auftragsbücher</div>
+        <h3>Plus</h3>
+        <div class="preis">349 €<small>pro Monat · bis 50 offene Angebote</small></div>
+        <ul class="haken"><li>bis zu 3 Kontakte je Angebot</li><li>Wochenübersicht</li><li>Monatsauswertung mit Absagegründen</li></ul>
+        <a class="knopf hohl" href="anfrage.html?thema=plus">Plus anfragen</a>
+      </div>
+    </div>
+    <p class="hinweis-preise">Zusätzlich 49 € je Auftrag, der nach unserem Nachfassen zugesagt wird. Alle Preise sind Endpreise; als Kleinunternehmer nach § 19 UStG berechnen wir keine Umsatzsteuer. Zahlung per Rechnung.</p>
   </div>
 </section>
 
-<section class="sektion">
+<section class="sektion hell" id="produkttexte">
+  <div class="wrap zwei-spalten">
+    <div>
+      <div class="tag">Für Online-Händler</div>
+      <h2>Produktbeschreibungen, die verkaufen.</h2>
+      <p class="einleitung">Fertige, geprüfte Texte für Ihren Shop, eBay oder Amazon: Titel, Einleitung, wichtigste Merkmale, Lieferumfang und technische Daten. Wir schreiben nur, was belegt ist, und markieren fehlende Angaben, statt etwas zu erfinden.</p>
+      <a class="knopf hohl" href="anfrage.html?thema=texte">Texte anfragen</a>
+    </div>
+    <div class="tab-wrap">
+      <table class="tabelle">
+        <thead><tr><th>Umfang</th><th>Pro Text</th><th>Preis</th></tr></thead>
+        <tbody>
+          <tr><td>Einzeltext</td><td>19,00 €</td><td>19 €</td></tr>
+          <tr><td>10er-Paket</td><td>14,90 €</td><td>149 €</td></tr>
+          <tr><td>50er-Paket</td><td>11,80 €</td><td>590 €</td></tr>
+          <tr><td>Fassung für weitere Plattform</td><td>5,00 €</td><td>je Text</td></tr>
+        </tbody>
+      </table>
+      <p class="quelle">Eine Korrekturrunde inklusive. Lieferzeit: 10er-Paket 3 Werktage, 50er-Paket 7 Werktage.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sektion" id="fragen">
+  <div class="wrap" style="max-width:780px">
+    <div class="tag">Häufige Fragen</div>
+    <h2>Gut zu wissen.</h2>
+    <details><summary>Rufen Sie meine Kunden einfach so an?</summary><p>Nur, wenn Ihre Kunden damit rechnen. Sie schreiben in Ihre Angebote einen Satz wie „Wir melden uns in einigen Tagen telefonisch bei Ihnen. Wenn Sie das nicht möchten, genügt eine kurze Nachricht.“ Wer keinen Anruf möchte, bekommt eine E-Mail oder einen Brief.</p></details>
+    <details><summary>In wessen Namen melden Sie sich?</summary><p>In Ihrem. Wir stellen uns als Ansprechpartner Ihres Betriebs vor und halten uns an das, was wir vorher mit Ihnen abgesprochen haben.</p></details>
+    <details><summary>Dürfen Sie Preise verhandeln?</summary><p>Nein. Preise, Rabatte und technische Zusagen bleiben bei Ihnen. Wir nehmen Wünsche auf und geben sie an Sie weiter.</p></details>
+    <details><summary>Was passiert mit den Kundendaten?</summary><p>Wir nutzen sie nur zum Nachfassen Ihrer Angebote, geben sie nicht weiter und löschen sie, wenn der Auftrag abgeschlossen ist. Dazu schließen wir mit Ihnen eine Vereinbarung zur Auftragsverarbeitung.</p></details>
+    <details><summary>Wie schnell kann es losgehen?</summary><p>Meist innerhalb von zwei Werktagen nach Ihrer Anfrage.</p></details>
+  </div>
+</section>
+
+<section class="sektion hell">
   <div class="wrap schluss">
-    <h2>Bereit für deinen eigenen Assistenten?</h2>
-    <p class="einleitung" style="margin:0 auto 26px">Schreib uns, was er für dich erledigen soll. Wir melden uns mit einem Vorschlag.</p>
-    <a class="knopf" href="anfrage.html">Jetzt anfragen</a><p style="margin-top:14px;font-size:.92rem">oder per E-Mail: <a href="mailto:kontakt@novaone-group.de" style="color:inherit">kontakt@novaone-group.de</a></p>
+    <h2>Wie viele Angebote liegen gerade bei Ihnen?</h2>
+    <p class="einleitung" style="margin:0 auto 26px">Schreiben Sie uns kurz, in welchem Gewerk Sie arbeiten und wie viele Angebote offen sind. Wir melden uns innerhalb eines Werktags.</p>
+    <a class="knopf" href="anfrage.html">Jetzt anfragen</a><p style="margin-top:14px;font-size:.92rem">oder per E-Mail: <a href="mailto:kontakt@novaone-group.de" style="color:inherit">kontakt@novaone-group.de</a> · Telefon: 0151 19436573</p>
   </div>
 </section>
 

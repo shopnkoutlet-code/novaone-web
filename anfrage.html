@@ -2,7 +2,7 @@
 <html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="robots" content="index,follow">
-<title>NovaOS anfragen – NOVA ONE</title>
+<title>Anfrage – NOVA ONE</title>
 <style>
 :root{--creme:#F5F6F8;--hell:#FFFFFF;--gruen:#2A59D7;--tief:#0E1424;--messing:#2A59D7;--text:#1A1F2B;--grau:#667085;--linie:#D9DDE4}
 *{box-sizing:border-box}
@@ -48,9 +48,9 @@ form.anfrage button[disabled]{opacity:.6;cursor:wait}
 <body>
 <div class="kopf"><a class="logo" href="/"><i>N</i>NOVA ONE</a></div>
 <main class="wrap">
-<div class="tag">NovaOS</div>
-<h1>Deinen eigenen Assistenten anfragen</h1>
-<p>Erzähl uns kurz, wer du bist und was dein Assistent für dich erledigen soll. Wir melden uns innerhalb von 24 Stunden mit einem Vorschlag für ein kurzes Gespräch. Unverbindlich.</p>
+<div class="tag">Anfrage</div>
+<h1>Schreiben Sie uns</h1>
+<p>Erzählen Sie uns kurz, wer Sie sind und worum es geht. Wir melden uns innerhalb eines Werktags mit einem Vorschlag. Unverbindlich.</p>
 
 <form class="anfrage" id="anfrage" novalidate>
   <div class="zwei">
@@ -62,25 +62,25 @@ form.anfrage button[disabled]{opacity:.6;cursor:wait}
     <label>Firma oder Beruf <small>(optional)</small><input name="firma" autocomplete="organization" maxlength="120"></label>
   </div>
   <label>Worum geht es?
-    <select name="thema"><option value="NovaOS – noch unsicher">NovaOS – weiß noch nicht welche Stufe</option><option value="NovaOS Start">NovaOS Start (490 €)</option><option value="NovaOS Plus">NovaOS Plus (990 € Pilotpreis)</option><option value="NovaOS Komplett">NovaOS Komplett (2.490 €)</option><option value="Kurs">Kurs „Dein KI-Mitarbeiter in 7 Tagen“</option><option value="Sonstiges">Sonstiges</option></select>
+    <select name="thema"><option value="Nachfassservice – noch unsicher">Angebote nachfassen – weiß noch nicht welches Paket</option><option value="Nachfassservice Probemonat">Angebote nachfassen: Probemonat (99 €)</option><option value="Nachfassservice Start">Angebote nachfassen: Start (199 €/Monat)</option><option value="Nachfassservice Plus">Angebote nachfassen: Plus (349 €/Monat)</option><option value="Produktbeschreibungen">Produktbeschreibungen für Online-Händler</option><option value="Sonstiges">Etwas anderes</option></select>
   </label>
-  <label>Was soll dein Assistent für dich erledigen?<textarea name="nachricht" required maxlength="3000" placeholder="z. B. Mails sortieren, Termine planen, Rechnungen im Blick behalten …"></textarea></label>
+  <label>Ihre Nachricht<textarea name="nachricht" required maxlength="3000" placeholder="z. B. Malerbetrieb, gerade etwa 15 offene Angebote, meist Privatkunden …"></textarea></label>
   <label class="falle" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
   <label class="check"><input type="checkbox" name="datenschutz" required> <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert werden. Mehr dazu in der <a href="datenschutz.html#kontaktformular">Datenschutzerklärung</a>.</span></label>
   <button type="submit">Anfrage senden</button>
   <div class="meldung" id="meldung"></div>
 </form>
-<p style="color:var(--grau);font-size:.92rem">Lieber per E-Mail? Schreib an <a href="mailto:kontakt@novaone-group.de?subject=NovaOS%20Anfrage">kontakt@novaone-group.de</a>.</p>
+<p style="color:var(--grau);font-size:.92rem">Lieber per E-Mail? Schreiben Sie an <a href="mailto:kontakt@novaone-group.de?subject=Anfrage">kontakt@novaone-group.de</a>.</p>
 </main>
 <script>
 const ZIEL = "https://macbook-air-von-niklas.tailcd6010.ts.net:8443/jarvis/api/anfrage";
 const f = document.getElementById("anfrage"), m = document.getElementById("meldung"), k = f.querySelector("button");
-const q = new URLSearchParams(location.search); const st = {start: 1, plus: 2, komplett: 3}[q.get("stufe")]; if (st) f.thema.selectedIndex = st; if (q.get("thema") === "kurs") f.thema.selectedIndex = 4;
+const q = new URLSearchParams(location.search); const st = {probemonat: 1, start: 2, plus: 3, texte: 4}[q.get("thema")]; if (st) f.thema.selectedIndex = st;
 function zeig(gut, t) { m.className = "meldung " + (gut ? "gut" : "schlecht"); m.textContent = t; }
 f.onsubmit = async e => {
   e.preventDefault();
   if (!f.name.value.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(f.email.value.trim()) || f.nachricht.value.trim().length < 5) return zeig(false, "Bitte Name, eine gültige E-Mail-Adresse und eine kurze Nachricht angeben.");
-  if (!f.datenschutz.checked) return zeig(false, "Bitte bestätige noch kurz den Datenschutz-Hinweis.");
+  if (!f.datenschutz.checked) return zeig(false, "Bitte bestätigen Sie noch kurz den Datenschutz-Hinweis.");
   k.disabled = true; k.textContent = "Wird gesendet …";
   const daten = {name: f.name.value, email: f.email.value, telefon: f.telefon.value, firma: f.firma.value, thema: f.thema.value, nachricht: f.nachricht.value, website: f.website.value, datenschutz: true};
   try {
@@ -88,12 +88,12 @@ f.onsubmit = async e => {
     const r = await fetch(ZIEL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(daten), signal: ab.signal}); clearTimeout(uhr);
     const j = await r.json();
     if (!j.ok) throw new Error(j.text || "Fehler");
-    f.reset(); zeig(true, "Danke! Deine Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden per E-Mail.");
+    f.reset(); zeig(true, "Danke! Ihre Anfrage ist angekommen. Wir melden uns innerhalb eines Werktags.");
     k.textContent = "Gesendet ✓";
   } catch (x) {
     k.disabled = false; k.textContent = "Anfrage senden";
-    const betreff = encodeURIComponent("NovaOS Anfrage von " + daten.name), text = encodeURIComponent(daten.nachricht + "\n\n" + daten.name + "\n" + daten.email + (daten.telefon ? "\n" + daten.telefon : ""));
-    m.className = "meldung schlecht"; m.innerHTML = "Das Senden hat gerade nicht geklappt. <a href=\"mailto:kontakt@novaone-group.de?subject=" + betreff + "&body=" + text + "\">Hier klicken, um die Anfrage per E-Mail zu schicken</a> – deine Angaben sind schon eingetragen.";
+    const betreff = encodeURIComponent("Anfrage von " + daten.name), text = encodeURIComponent(daten.nachricht + "\n\n" + daten.name + "\n" + daten.email + (daten.telefon ? "\n" + daten.telefon : ""));
+    m.className = "meldung schlecht"; m.innerHTML = "Das Senden hat gerade nicht geklappt. <a href=\"mailto:kontakt@novaone-group.de?subject=" + betreff + "&body=" + text + "\">Hier klicken, um die Anfrage per E-Mail zu schicken</a> – Ihre Angaben sind schon eingetragen.";
   }
 };
 </script>
