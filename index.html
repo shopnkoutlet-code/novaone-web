@@ -1,16 +1,260 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>NOVA ONE</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="E-Book: Bau dir deinen eigenen KI-Assistenten ohne Code. Zwei Skills gratis: Einkaufsliste und Ernährungsplan, To-Do-Liste und Rechnungs-Erinnerungen.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>NOVA ONE – Assistent ohne Code</title>
 <style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0E1424;color:#F5F6F8;font:17px/1.6 -apple-system,"Inter",Helvetica,Arial,sans-serif;text-align:center}
-h1{letter-spacing:.14em;font-size:1.6rem;margin:0 0 .4em;color:#fff}
-p{margin:0 0 1.4em;color:#B7C0D4}
-a{color:#8FA9F0;margin:0 10px;font-size:.9rem}
-</style></head><body><main>
-<h1>NOVA ONE</h1>
-<p>Diese Seite ist vorübergehend nicht verfügbar.</p>
-<a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a>
-</main></body></html>
+/* Layout: ruhige Produktseite. Links Aussage, rechts ein echtes Beispiel-Gespräch. Danach zwei kopierbare Gratis-Skills. */
+:root{
+  --bg:#F5F6F8; --flaeche:#FFFFFF; --tinte:#0E1424; --leise:#55607A; --linie:#D9DDE4;
+  --blau:#2A59D7; --blau-text:#2A59D7; --blau-hell:#E8EEFC; --auf-blau:#FFFFFF; --code-bg:#0E1424; --code-fg:#E6EAF5;
+  --schrift:"Avenir Next","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1424; --flaeche:#172036; --tinte:#F5F6F8; --leise:#A9B3CA; --linie:#2A3550;
+  --blau:#2A59D7; --blau-text:#8FA9F0; --blau-hell:#1B2A52; --code-bg:#090D18; --code-fg:#E6EAF5; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1424; --flaeche:#172036; --tinte:#F5F6F8; --leise:#A9B3CA; --linie:#2A3550;
+  --blau:#2A59D7; --blau-text:#8FA9F0; --blau-hell:#1B2A52; --code-bg:#090D18; --code-fg:#E6EAF5; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tinte);font:17px/1.6 var(--schrift);
+  padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.breit{max-width:1080px;margin:0 auto}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.1rem,5.6vw,3.6rem);font-weight:800}
+h2{font-size:clamp(1.55rem,3.6vw,2.2rem);font-weight:780}
+h3{font-size:1.15rem;font-weight:720}
+p{margin:0 0 1em}
+a{color:var(--blau-text)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blau-text);outline-offset:3px}
+.kopf{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.1em;color:var(--tinte);text-decoration:none}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--blau);color:#fff;display:grid;place-items:center;font-style:normal}
+.nav{display:flex;gap:20px;flex-wrap:wrap;font-size:.95rem}
+.nav a{color:var(--leise);text-decoration:none}
+.nav a:hover{color:var(--tinte)}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(28px,6vw,72px)}
+.etikett{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blau-text);margin-bottom:14px}
+.hero p.lead{font-size:1.2rem;color:var(--leise);max-width:34em;margin:20px 0 28px}
+.knoepfe{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.knopf{display:inline-block;border:0;cursor:pointer;background:var(--blau);color:var(--auf-blau);padding:14px 26px;border-radius:10px;font:700 1rem var(--schrift);text-decoration:none}
+.knopf:hover{filter:brightness(1.1)}
+.knopf.leise{background:transparent;color:var(--blau-text);border:2px solid var(--blau-text)}
+.knopf[aria-disabled="true"]{background:var(--linie);color:var(--leise);cursor:default;filter:none}
+.klein{font-size:.9rem;color:var(--leise)}
+.chat{background:var(--flaeche);border:1px solid var(--linie);border-radius:18px;padding:18px;display:grid;gap:12px;min-width:0}
+.chat .kopfzeile{font-size:.78rem;color:var(--leise);letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.blase{padding:12px 14px;border-radius:14px;font-size:.95rem;line-height:1.5;min-width:0;overflow-wrap:anywhere}
+.ich{background:var(--blau);color:#fff;justify-self:end;max-width:88%;border-bottom-right-radius:4px}
+.er{background:var(--blau-hell);color:var(--tinte);max-width:96%;border-bottom-left-radius:4px}
+.er b{display:block;margin:6px 0 2px}
+.er ul{margin:0;padding-left:1.1em}
+section{padding-block:clamp(36px,6vw,72px)}
+.band{border-top:1px solid var(--linie)}
+.kopfblock{max-width:40em;margin-bottom:28px}
+.kopfblock p{color:var(--leise);margin-top:12px}
+.drei{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.drei>div{border-top:3px solid var(--blau);padding-top:14px}
+.drei p{color:var(--leise);margin:8px 0 0}
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.skill{background:var(--flaeche);border:1px solid var(--linie);border-radius:16px;padding:22px;display:grid;gap:14px;align-content:start;min-width:0}
+.skill ol{margin:0;padding-left:1.2em;color:var(--leise);font-size:.95rem}
+.skill li{margin-bottom:.3em}
+.code{background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:16px;font:.82rem/1.55 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;max-height:260px;overflow:auto;margin:0}
+.kopieren{justify-self:start}
+.kapitel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 40px;padding:0;margin:0;list-style:none;counter-reset:k}
+.kapitel li{counter-increment:k;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--linie)}
+.kapitel li::before{content:counter(k);font-weight:800;color:var(--blau-text);min-width:1.4em}
+.preis{background:var(--flaeche);border:1px solid var(--linie);border-radius:18px;padding:clamp(20px,4vw,36px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.preis .zahl{font-size:clamp(2.4rem,6vw,3.4rem);font-weight:800;letter-spacing:-.03em}
+.preis ul{margin:12px 0 0;padding-left:1.1em;color:var(--leise)}
+details{border-bottom:1px solid var(--linie);padding:14px 0}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0;color:var(--leise)}
+.firmen{background:var(--blau-hell);border-radius:16px;padding:clamp(20px,4vw,32px);display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.firmen p{margin:6px 0 0;color:var(--leise)}
+.fuss{border-top:1px solid var(--linie);padding-block:32px;color:var(--leise);font-size:.88rem;display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
+.fuss a{color:var(--leise)}
+@media (max-width:820px){
+  .hero,.skills,.drei,.kapitel,.preis{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style></head><body>
+<div class="breit">
+  <header class="kopf">
+    <a class="logo" href="#top"><i>N</i>NOVA ONE</a>
+    <nav class="nav" aria-label="Seitenmenü">
+      <a href="#gratis">Gratis-Skills</a><a href="#inhalt">Inhalt</a><a href="#preis">Preis</a><a href="#fragen">Fragen</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <div class="etikett">E-Book für Einsteiger</div>
+        <h1>Bau dir deinen eigenen Assistenten. Ohne eine Zeile Code.</h1>
+        <p class="lead">Ein KI-Assistent, der deine Einkäufe plant, deine Aufgaben sortiert und dich an Rechnungen erinnert. Das E-Book zeigt dir Schritt für Schritt, wie du ihn mit Claude, ChatGPT oder Gemini selbst einrichtest. Zwei fertige Skills bekommst du sofort gratis.</p>
+        <div class="knoepfe">
+          <a class="knopf" href="#gratis">Gratis-Skills holen</a>
+          <a class="knopf leise" href="#preis">Zum E-Book, 19 €</a>
+        </div>
+      </div>
+      <div class="chat" aria-label="Beispiel eines Gesprächs mit dem Skill Einkaufsliste und Ernährungsplan">
+        <div class="kopfzeile"><span>Beispiel, gekürzt</span><span>Skill: Ernährungsplan</span></div>
+        <div class="blase ich">Plan für 4 Tage, 2 Personen, vegetarisch, 50 € Budget. Wir haben Reis und Olivenöl.</div>
+        <div class="blase er">
+          <b>Tag 1</b>Gemüsepfanne mit Reis (25 Min.)
+          <b>Tag 2</b>Linsensuppe mit Brot (35 Min.), Reste für Tag 3
+          <b>Einkaufsliste, Obst und Gemüse</b>
+          <ul><li>Paprika, 3 Stück</li><li>Zucchini, 2 Stück</li><li>Karotten, 500 g</li></ul>
+          <b>Preis grob geschätzt</b>Etwa 40 bis 50 €. Echte Preise können abweichen.
+        </div>
+      </div>
+    </div>
+
+    <section class="band" aria-labelledby="was">
+      <div class="kopfblock">
+        <h2 id="was">Ein Assistent ist eine gute Anweisung, kein Programm</h2>
+        <p>Du schreibst einmal auf, was dein Assistent tun soll und wie. Danach macht er es jedes Mal so. Dafür brauchst du nur Text und die Chat-App, die du vielleicht schon hast.</p>
+      </div>
+      <div class="drei">
+        <div><h3>Du sagst, was du brauchst</h3><p>In normalen Sätzen, so wie du es einem Menschen erklären würdest.</p></div>
+        <div><h3>Er merkt es sich</h3><p>Deine Vorlieben, dein Budget, deine Regeln stehen in der Anweisung und gelten für jedes Gespräch.</p></div>
+        <div><h3>Du behältst die Kontrolle</h3><p>Der Assistent schlägt vor. Du entscheidest, was gekauft, bezahlt oder gemacht wird.</p></div>
+      </div>
+    </section>
+
+    <section class="band" id="gratis" aria-labelledby="gratis-titel">
+      <div class="kopfblock">
+        <h2 id="gratis-titel">Zwei Skills gratis, sofort benutzbar</h2>
+        <p>Text kopieren, in der KI-App als Anweisung einfügen, fertig. In Claude und ChatGPT legst du dafür ein neues Projekt an, in Gemini einen neuen Gem. Die Menüs heißen je nach App leicht anders.</p>
+      </div>
+      <div class="skills">
+        <article class="skill">
+          <h3>1. Einkaufsliste und Ernährungsplan</h3>
+          <ol>
+            <li>Neues Projekt anlegen und den Text unten bei den Anweisungen einfügen.</li>
+            <li>Schreibe „Plan“ und sage, für wie viele Tage.</li>
+            <li>Beim ersten Mal fragt er dich einmal nach Personen, Budget und Vorlieben.</li>
+          </ol>
+          <pre class="code" id="skill1">Du bist mein Assistent für Essen und Einkauf. Du sprichst Deutsch, einfach und freundlich.
+
+Beim ersten Gespräch fragst du mich einmal nach: Anzahl der Personen, Ernährungsweise (zum Beispiel vegetarisch), Unverträglichkeiten und Allergien, Dinge, die ich nicht mag, Kochzeit pro Tag, Wochenbudget in Euro und dem Supermarkt, in dem ich einkaufe. Du merkst dir die Antworten und fragst nicht noch einmal.
+
+Wenn ich "Plan" schreibe, machst du:
+1. Einen Ernährungsplan für so viele Tage, wie ich nenne (Standard: 7). Pro Tag Frühstück, Mittagessen und Abendessen, jeweils ein Gericht mit ungefährer Kochzeit.
+2. Eine Einkaufsliste, nach Supermarkt-Abteilungen sortiert (Obst und Gemüse, Kühlregal, Trockenwaren, Tiefkühl, Getränke, Sonstiges). Mengen für meine Personenzahl, gleiche Zutaten zusammengezählt. Was ich schon zu Hause habe, lässt du weg.
+3. Eine grobe Preisschätzung mit dem Hinweis: "Schätzung, echte Preise können abweichen."
+4. Plane Reste ein, damit nichts weggeworfen wird.
+
+Wenn ich "Ändere Tag 3" oder "ohne Fisch" schreibe, änderst du nur das und passt die Einkaufsliste an.
+
+Regeln: Du bist kein Arzt und keine Ernährungsberatung. Bei Krankheiten, Schwangerschaft, Essstörungen oder Kindern unter 3 Jahren sagst du mir, dass ich vorher eine Ärztin oder einen Arzt fragen soll. Keine Diäten mit extremen Kalorienzahlen und keine Wunderversprechen. Bei Allergien erinnerst du mich daran, die Zutatenlisten selbst zu prüfen.</pre>
+          <button class="knopf kopieren" type="button" data-ziel="skill1">Text kopieren</button>
+        </article>
+
+        <article class="skill">
+          <h3>2. To-Do-Liste und Rechnungs-Erinnerungen</h3>
+          <ol>
+            <li>Neues Projekt anlegen und den Text unten bei den Anweisungen einfügen.</li>
+            <li>Schreibe deine Aufgaben durcheinander auf oder nenne deine Rechnungen mit Absender, Betrag und Fälligkeit.</li>
+            <li>Für Rechnungen bekommst du eine Kalenderdatei. Die Erinnerung kommt von deinem Kalender.</li>
+          </ol>
+          <pre class="code" id="skill2">Du bist mein Assistent für Aufgaben und Rechnungen. Du sprichst Deutsch, einfach und kurz.
+
+Aufgaben: Wenn ich dir viele Aufgaben schreibe, auch durcheinander, machst du eine To-Do-Liste:
+- Gruppen: Heute (höchstens 5 Punkte), Diese Woche, Später.
+- Pro Aufgabe ein klarer Satz, bei Bedarf mit geschätzter Dauer.
+- Sage mir in einem Satz, womit ich anfangen soll und warum.
+Ist etwas unklar, stellst du eine kurze Rückfrage. Sonst machst du einfach.
+
+Rechnungen: Wenn ich dir Rechnungen nenne (Absender, Betrag, Fälligkeitsdatum), machst du:
+1. Eine Tabelle, nach Fälligkeit sortiert: Datum, Absender, Betrag, Status (offen oder bezahlt). Unten die Summe aller offenen Beträge.
+2. Eine Kalenderdatei im .ics-Format. Pro offener Rechnung ein ganztägiger Termin am Fälligkeitstag mit dem Titel "Rechnung zahlen: Absender, Betrag" und je einer Erinnerung 3 Tage und 1 Tag vorher. Gib die Datei als Text in einem Codeblock aus, damit ich sie kopieren und als Datei mit der Endung .ics speichern kann.
+3. Wenn ich frage, erklärst du, wie ich die Datei in meinen Kalender importiere (iPhone, Google Kalender, Outlook).
+
+Regeln: Du erfindest keine Beträge und keine Daten. Fehlt eine Angabe, fragst du nach. Schreibe nie Kontonummern oder IBAN in die Listen. Du bezahlst nichts. Die Erinnerung kommt vom Kalender, nicht von dir.</pre>
+          <button class="knopf kopieren" type="button" data-ziel="skill2">Text kopieren</button>
+        </article>
+      </div>
+      <p class="klein" style="margin-top:18px">Prüfe die Ergebnisse immer selbst, vor allem Beträge, Daten und Zutaten bei Allergien. Eine KI kann sich irren.</p>
+    </section>
+
+    <section class="band" id="inhalt" aria-labelledby="inhalt-titel">
+      <div class="kopfblock">
+        <h2 id="inhalt-titel">Das steht im E-Book</h2>
+        <p>Geplanter Inhalt, Stand 31.10.2026. Das E-Book erscheint in Kürze.</p>
+      </div>
+      <ol class="kapitel">
+        <li>Was ein Assistent kann und was nicht</li>
+        <li>Das richtige Programm wählen und gratis starten</li>
+        <li>Anweisungen schreiben: der einfache Grundaufbau</li>
+        <li>Gedächtnis ohne Code: Projekte und feste Regeln</li>
+        <li>Fertige Skills zum Kopieren für den Alltag</li>
+        <li>Erinnerungen und Termine über deinen Kalender</li>
+        <li>Datenschutz: Was du eingeben darfst und was nicht</li>
+        <li>Kosten im Griff: wann sich ein Bezahl-Abo lohnt</li>
+      </ol>
+    </section>
+
+    <section class="band" id="preis" aria-labelledby="preis-titel">
+      <div class="preis">
+        <div>
+          <h2 id="preis-titel">Das E-Book</h2>
+          <ul>
+            <li>Digitales Produkt zum Herunterladen</li>
+            <li>Verkauf und Bezahlung über Digistore24</li>
+            <li>Bei digitalen Inhalten stimmst du beim Kauf zu, dass der Zugang sofort beginnt. Dann erlischt dein Widerrufsrecht. Die genauen Angaben siehst du vor dem Kauf.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="zahl">19 €</div>
+          <a class="knopf" href="#preis" aria-disabled="true" style="margin-top:12px">Erscheint in Kürze</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="fragen" aria-labelledby="fragen-titel">
+      <div class="kopfblock"><h2 id="fragen-titel">Häufige Fragen</h2></div>
+      <details><summary>Brauche ich Vorkenntnisse?</summary><p>Nein. Du musst nur Text schreiben und kopieren können.</p></details>
+      <details><summary>Welche Programme brauche ich?</summary><p>Eine KI-App wie Claude, ChatGPT oder Gemini. Alle haben eine kostenlose Stufe, die für den Einstieg reicht. Sie hat Nutzungsgrenzen, und die Angebote ändern sich. Schau bei deinem Anbieter nach.</p></details>
+      <details><summary>Kostet die KI extra?</summary><p>Zum Ausprobieren nicht. Ein Bezahl-Abo ist nur nötig, wenn du die Grenzen der kostenlosen Stufe erreichst. Im E-Book erkläre ich, woran du das merkst.</p></details>
+      <details><summary>Was passiert mit meinen Daten?</summary><p>Alles, was du in die KI-App tippst, verarbeitet der Anbieter der App. Gib keine Passwörter, Kontonummern oder Gesundheitsdaten ein. Das E-Book zeigt dir, wie du Beispiele statt echter Daten benutzt.</p></details>
+      <details><summary>Ersetzt der Ernährungsplan eine Beratung?</summary><p>Nein. Er ist eine Alltagshilfe zum Planen und Einkaufen. Bei Krankheiten, Schwangerschaft oder Essstörungen sprich bitte mit einer Ärztin oder einem Arzt.</p></details>
+    </section>
+
+    <section class="band" aria-labelledby="firmen-titel">
+      <div class="firmen">
+        <div>
+          <h2 id="firmen-titel" style="font-size:1.35rem">Du führst einen Handwerksbetrieb?</h2>
+          <p>NovaOS ist ein persönlicher KI-Assistent für kleine Firmen, den wir dir fertig einrichten. Schreib uns: kontakt@novaone-group.de</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fuss">
+    <span>NOVA ONE, Niklas Kupferschmidt, München</span>
+    <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.kopieren').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.getAttribute('data-ziel'));
+      var text=el.textContent;
+      function fertig(){var alt=b.textContent;b.textContent='Kopiert';setTimeout(function(){b.textContent=alt},1800)}
+      function auswaehlen(){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Text markiert, jetzt kopieren';}
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(fertig,auswaehlen);
+      }else{auswaehlen()}
+    });
+  });
+})();
+</script>
+</body></html>
