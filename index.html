@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="E-Book: Bau dir deinen eigenen KI-Assistenten ohne Code. Zwei Skills gratis: Einkaufsliste und Ernährungsplan, To-Do-Liste und Rechnungs-Erinnerungen.">
+<meta name="description" content="E-Book: Bau dir deinen eigenen KI-Assistenten ohne Code. Zwei Skills gratis zum Herunterladen: Einkaufsliste und Ernährungsplan, To-Do-Liste und Rechnungs-Erinnerungen.">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>NOVA ONE – Assistent ohne Code</title>
@@ -64,7 +64,11 @@ section{padding-block:clamp(36px,6vw,72px)}
 .skill ol{margin:0;padding-left:1.2em;color:var(--leise);font-size:.95rem}
 .skill li{margin-bottom:.3em}
 .code{background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:16px;font:.82rem/1.55 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;max-height:260px;overflow:auto;margin:0}
-.kopieren{justify-self:start}
+.was{margin:0;padding-left:1.1em;color:var(--leise);font-size:.95rem}
+.was li{margin-bottom:.25em}
+.einrichten{margin-top:28px;background:var(--flaeche);border:1px solid var(--linie);border-radius:14px;padding:20px 22px}
+.einrichten ol{margin:12px 0 0;padding-left:1.2em;color:var(--leise)}
+.einrichten li{margin-bottom:.4em}
 .kapitel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 40px;padding:0;margin:0;list-style:none;counter-reset:k}
 .kapitel li{counter-increment:k;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--linie)}
 .kapitel li::before{content:counter(k);font-weight:800;color:var(--blau-text);min-width:1.4em}
@@ -130,55 +134,38 @@ details p{margin:10px 0 0;color:var(--leise)}
     <section class="band" id="gratis" aria-labelledby="gratis-titel">
       <div class="kopfblock">
         <h2 id="gratis-titel">Zwei Skills gratis, sofort benutzbar</h2>
-        <p>Text kopieren, in der KI-App als Anweisung einfügen, fertig. In Claude und ChatGPT legst du dafür ein neues Projekt an, in Gemini einen neuen Gem. Die Menüs heißen je nach App leicht anders.</p>
+        <p>Datei herunterladen, in deiner KI-App einrichten, fertig. Beide Skills gibt es als Datei für Claude und als normale Textdatei für alle anderen Apps.</p>
       </div>
       <div class="skills">
         <article class="skill">
           <h3>1. Einkaufsliste und Ernährungsplan</h3>
           <ol>
-            <li>Neues Projekt anlegen und den Text unten bei den Anweisungen einfügen.</li>
+            <li>Datei unten herunterladen und einrichten, siehe „So richtest du einen Skill ein“.</li>
             <li>Schreibe „Plan“ und sage, für wie viele Tage.</li>
             <li>Beim ersten Mal fragt er dich einmal nach Personen, Budget und Vorlieben.</li>
           </ol>
-          <pre class="code" id="skill1">Du bist mein Assistent für Essen und Einkauf. Du sprichst Deutsch, einfach und freundlich.
-
-Beim ersten Gespräch fragst du mich einmal nach: Anzahl der Personen, Ernährungsweise (zum Beispiel vegetarisch), Unverträglichkeiten und Allergien, Dinge, die ich nicht mag, Kochzeit pro Tag, Wochenbudget in Euro und dem Supermarkt, in dem ich einkaufe. Du merkst dir die Antworten und fragst nicht noch einmal.
-
-Wenn ich "Plan" schreibe, machst du:
-1. Einen Ernährungsplan für so viele Tage, wie ich nenne (Standard: 7). Pro Tag Frühstück, Mittagessen und Abendessen, jeweils ein Gericht mit ungefährer Kochzeit.
-2. Eine Einkaufsliste, nach Supermarkt-Abteilungen sortiert (Obst und Gemüse, Kühlregal, Trockenwaren, Tiefkühl, Getränke, Sonstiges). Mengen für meine Personenzahl, gleiche Zutaten zusammengezählt. Was ich schon zu Hause habe, lässt du weg.
-3. Eine grobe Preisschätzung mit dem Hinweis: "Schätzung, echte Preise können abweichen."
-4. Plane Reste ein, damit nichts weggeworfen wird.
-
-Wenn ich "Ändere Tag 3" oder "ohne Fisch" schreibe, änderst du nur das und passt die Einkaufsliste an.
-
-Regeln: Du bist kein Arzt und keine Ernährungsberatung. Bei Krankheiten, Schwangerschaft, Essstörungen oder Kindern unter 3 Jahren sagst du mir, dass ich vorher eine Ärztin oder einen Arzt fragen soll. Keine Diäten mit extremen Kalorienzahlen und keine Wunderversprechen. Bei Allergien erinnerst du mich daran, die Zutatenlisten selbst zu prüfen.</pre>
-          <button class="knopf kopieren" type="button" data-ziel="skill1">Text kopieren</button>
+          <ul class="was"><li>Plan für beliebig viele Tage: Frühstück, Mittag, Abend mit Kochzeit</li><li>Einkaufsliste nach Supermarkt-Abteilungen, Mengen für deine Personenzahl</li><li>Grobe Preisschätzung und Reste-Planung</li><li>Klare Grenzen: keine Ernährungsberatung, Hinweis bei Allergien</li></ul>
+          <div class="knoepfe"><a class="knopf" href="downloads/Skill-1-Einkaufsliste-und-Ernaehrungsplan.zip" download>Herunterladen für Claude (.zip)</a><a class="knopf leise" href="downloads/Skill-1-Einkaufsliste-und-Ernaehrungsplan.txt" download>Als Textdatei (.txt)</a></div>
         </article>
 
         <article class="skill">
           <h3>2. To-Do-Liste und Rechnungs-Erinnerungen</h3>
           <ol>
-            <li>Neues Projekt anlegen und den Text unten bei den Anweisungen einfügen.</li>
+            <li>Datei unten herunterladen und einrichten, siehe „So richtest du einen Skill ein“.</li>
             <li>Schreibe deine Aufgaben durcheinander auf oder nenne deine Rechnungen mit Absender, Betrag und Fälligkeit.</li>
             <li>Für Rechnungen bekommst du eine Kalenderdatei. Die Erinnerung kommt von deinem Kalender.</li>
           </ol>
-          <pre class="code" id="skill2">Du bist mein Assistent für Aufgaben und Rechnungen. Du sprichst Deutsch, einfach und kurz.
-
-Aufgaben: Wenn ich dir viele Aufgaben schreibe, auch durcheinander, machst du eine To-Do-Liste:
-- Gruppen: Heute (höchstens 5 Punkte), Diese Woche, Später.
-- Pro Aufgabe ein klarer Satz, bei Bedarf mit geschätzter Dauer.
-- Sage mir in einem Satz, womit ich anfangen soll und warum.
-Ist etwas unklar, stellst du eine kurze Rückfrage. Sonst machst du einfach.
-
-Rechnungen: Wenn ich dir Rechnungen nenne (Absender, Betrag, Fälligkeitsdatum), machst du:
-1. Eine Tabelle, nach Fälligkeit sortiert: Datum, Absender, Betrag, Status (offen oder bezahlt). Unten die Summe aller offenen Beträge.
-2. Eine Kalenderdatei im .ics-Format. Pro offener Rechnung ein ganztägiger Termin am Fälligkeitstag mit dem Titel "Rechnung zahlen: Absender, Betrag" und je einer Erinnerung 3 Tage und 1 Tag vorher. Gib die Datei als Text in einem Codeblock aus, damit ich sie kopieren und als Datei mit der Endung .ics speichern kann.
-3. Wenn ich frage, erklärst du, wie ich die Datei in meinen Kalender importiere (iPhone, Google Kalender, Outlook).
-
-Regeln: Du erfindest keine Beträge und keine Daten. Fehlt eine Angabe, fragst du nach. Schreibe nie Kontonummern oder IBAN in die Listen. Du bezahlst nichts. Die Erinnerung kommt vom Kalender, nicht von dir.</pre>
-          <button class="knopf kopieren" type="button" data-ziel="skill2">Text kopieren</button>
+          <ul class="was"><li>Sortiert Durcheinander in Heute, Diese Woche, Später</li><li>Sagt dir, womit du anfängst</li><li>Rechnungen als Tabelle nach Fälligkeit mit Summe</li><li>Kalenderdatei (.ics) mit Erinnerung 3 Tage und 1 Tag vorher</li></ul>
+          <div class="knoepfe"><a class="knopf" href="downloads/Skill-2-To-Do-Liste-und-Rechnungs-Erinnerungen.zip" download>Herunterladen für Claude (.zip)</a><a class="knopf leise" href="downloads/Skill-2-To-Do-Liste-und-Rechnungs-Erinnerungen.txt" download>Als Textdatei (.txt)</a></div>
         </article>
+      </div>
+      <div class="einrichten">
+        <h3 id="einrichten">So richtest du einen Skill ein</h3>
+        <ol>
+          <li><b>Claude:</b> Die .zip-Datei unter Einstellungen im Bereich Skills hochladen. Die Menünamen können sich ändern. Nicht entpacken.</li>
+          <li><b>ChatGPT:</b> Neues Projekt anlegen, die .txt-Datei öffnen und ihren Inhalt bei den Anweisungen des Projekts einfügen.</li>
+          <li><b>Gemini:</b> Neuen Gem anlegen und den Inhalt der .txt-Datei bei den Anweisungen einfügen.</li>
+        </ol>
       </div>
       <p class="klein" style="margin-top:18px">Prüfe die Ergebnisse immer selbst, vor allem Beträge, Daten und Zutaten bei Allergien. Eine KI kann sich irren.</p>
     </section>
@@ -241,20 +228,4 @@ Regeln: Du erfindest keine Beträge und keine Daten. Fehlt eine Angabe, fragst d
     <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
   </footer>
 </div>
-
-<script>
-(function(){
-  document.querySelectorAll('.kopieren').forEach(function(b){
-    b.addEventListener('click',function(){
-      var el=document.getElementById(b.getAttribute('data-ziel'));
-      var text=el.textContent;
-      function fertig(){var alt=b.textContent;b.textContent='Kopiert';setTimeout(function(){b.textContent=alt},1800)}
-      function auswaehlen(){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Text markiert, jetzt kopieren';}
-      if(navigator.clipboard&&navigator.clipboard.writeText){
-        navigator.clipboard.writeText(text).then(fertig,auswaehlen);
-      }else{auswaehlen()}
-    });
-  });
-})();
-</script>
 </body></html>
