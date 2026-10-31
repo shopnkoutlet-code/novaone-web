@@ -50,7 +50,7 @@ form.anfrage button[disabled]{opacity:.6;cursor:wait}
 <main class="wrap">
 <div class="tag">Anfrage</div>
 <h1>Schreiben Sie uns</h1>
-<p>Erzählen Sie uns kurz, wer Sie sind und worum es geht. Wir melden uns innerhalb eines Werktags mit einem Vorschlag. Unverbindlich.</p>
+<p>Erzählen Sie uns kurz, wer Sie sind und worum es geht. Wir melden uns innerhalb eines Werktags mit einem Vorschlag. Unverbindlich. Unser Angebot richtet sich ausschließlich an Unternehmen und Selbstständige.</p>
 
 <form class="anfrage" id="anfrage" novalidate>
   <div class="zwei">
@@ -88,7 +88,7 @@ f.onsubmit = async e => {
     const r = await fetch(ZIEL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(daten), signal: ab.signal}); clearTimeout(uhr);
     const j = await r.json();
     if (!j.ok) throw new Error(j.text || "Fehler");
-    f.reset(); zeig(true, "Danke! Ihre Anfrage ist angekommen. Wir melden uns innerhalb eines Werktags.");
+    if (window.novaAnfrage) window.novaAnfrage(); f.reset(); zeig(true, "Danke! Ihre Anfrage ist angekommen. Wir melden uns innerhalb eines Werktags.");
     k.textContent = "Gesendet ✓";
   } catch (x) {
     k.disabled = false; k.textContent = "Anfrage senden";
@@ -99,7 +99,7 @@ f.onsubmit = async e => {
 </script>
 <footer class="fuss"><div class="wrap">
   <b>NOVA ONE</b> · Niklas Kupferschmidt · Margot-Hielscher-Straße 9, 81249 München · kontakt@novaone-group.de<br>
-  <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="widerruf.html">Widerrufsbelehrung</a> · <a href="#" data-cookie-settings>Cookie-Einstellungen</a>
+  <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a> · <a href="#" data-cookie-settings>Cookie-Einstellungen</a>
 </div></footer>
 <script src="consent.js"></script>
 </body></html>

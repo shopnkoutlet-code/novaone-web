@@ -2,9 +2,9 @@
    Ohne Einwilligung wird keine Anfrage an Google gesendet. */
 (function () {
   var AW_ID = 'AW-18540673526';
-  var KAUF_LABEL = 'D-3wCKPNs64dEPbz8IhF';
+  // Label der Google-Ads-Conversion „Anfrage gesendet“ (in Google Ads anlegen und hier eintragen)
+  var ANFRAGE_LABEL = '';
   var KEY = 'novaone_einwilligung';
-  var SPERRE = 'novaone_kauf_gezaehlt';
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -37,15 +37,11 @@
     gtag('config', AW_ID);
   }
 
-  function kaufMelden() {
-    if (!window.novaKauf) return;
-    try { if (sessionStorage.getItem(SPERRE)) return; sessionStorage.setItem(SPERRE, '1'); } catch (e) {}
-    gtag('event', 'conversion', {
-      send_to: AW_ID + '/' + KAUF_LABEL,
-      value: 27.0,
-      currency: 'EUR'
-    });
-  }
+  var zugestimmt = false;
+  window.novaAnfrage = function () {
+    if (!zugestimmt || !ANFRAGE_LABEL) return;
+    gtag('event', 'conversion', { send_to: AW_ID + '/' + ANFRAGE_LABEL });
+  };
 
   function anwenden(wert) {
     if (wert === 'alle') {
@@ -56,8 +52,9 @@
         analytics_storage: 'denied'
       });
       gtagLaden();
-      kaufMelden();
+      zugestimmt = true;
     } else {
+      zugestimmt = false;
       gtag('consent', 'update', {
         ad_storage: 'denied',
         ad_user_data: 'denied',
@@ -73,7 +70,7 @@
       '#nova-cb{position:fixed;left:16px;right:16px;bottom:16px;max-width:560px;margin:0 auto;z-index:99999;' +
       'background:#FFFFFF;color:#1A1F2B;border:1px solid #D9DDE4;border-top:3px solid #2A59D7;border-radius:12px;' +
       'box-shadow:0 10px 40px rgba(14,20,36,.22);padding:20px 22px;font:15px/1.55 -apple-system,"Inter",Helvetica,Arial,sans-serif}' +
-      '#nova-cb h2{font:700 1.1rem Georgia,"Fraunces",serif;color:#2A59D7;margin:0 0 6px}' +
+      '#nova-cb h2{font:700 1.1rem -apple-system,Helvetica,Arial,sans-serif;color:#2A59D7;margin:0 0 6px}' +
       '#nova-cb p{margin:0 0 14px}' +
       '#nova-cb a{color:#2A59D7}' +
       '#nova-cb .nova-cb-knoepfe{display:flex;gap:10px;flex-wrap:wrap}' +
@@ -93,7 +90,7 @@
     d.setAttribute('aria-describedby', 'nova-cb-text');
     d.innerHTML =
       '<h2 id="nova-cb-titel">Ihre Privatsphäre</h2>' +
-      '<p id="nova-cb-text">Wir würden gerne messen, ob ein Kauf auf eine unserer Google-Anzeigen zurückgeht. ' +
+      '<p id="nova-cb-text">Wir würden gerne messen, ob eine Anfrage über unser Formular auf eine unserer Google-Anzeigen zurückgeht. ' +
       'Dafür setzt Google Ads mit Ihrer Einwilligung Cookies und erhält Daten wie Ihre IP-Adresse. ' +
       'Ohne Einwilligung findet keine Verbindung zu Google statt. Sie können Ihre Wahl jederzeit unten im Footer ändern. ' +
       '<a href="datenschutz.html#google-ads">Mehr in der Datenschutzerklärung</a></p>' +
