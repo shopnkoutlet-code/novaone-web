@@ -16,8 +16,18 @@
 <div class="etikett">Für Firmen</div><h1>NovaOS: Ihr KI-Assistent, fertig eingerichtet.</h1>
 <p class="lead">Wir richten für Ihren Betrieb einen persönlichen KI-Assistenten ein: Anfragen, Termine, Angebote, Postfach. Sie bekommen ein System, das läuft, statt eine Anleitung zum Selbstbauen.</p>
 <div class="karte"><h3>Erstgespräch</h3><p>Wir klären in einem kurzen Gespräch, ob NovaOS zu Ihrem Betrieb passt. Unverbindlich, ohne Verkaufsdruck.</p>
-<a class="knopf" href="mailto:kontakt@novaone-group.de?subject=NovaOS%20Erstgespr%C3%A4ch">Erstgespräch anfragen</a>
-<p class="klein" style="margin-top:12px">Oder rufen Sie an: 0151 19436573</p></div>
+<form class="anfrage" id="anfrage" novalidate>
+<label>Name<input type="text" name="name" autocomplete="name" required></label>
+<label>Firma (optional)<input type="text" name="firma" autocomplete="organization"></label>
+<label>E-Mail<input type="email" name="email" autocomplete="email" required></label>
+<label>Telefon (optional)<input type="tel" name="telefon" autocomplete="tel"></label>
+<label>Ihre Nachricht<textarea name="nachricht" rows="4" required placeholder="Worum geht es? Wann passt ein kurzes Gespräch?"></textarea></label>
+<label class="honig" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+<label class="zeile"><input type="checkbox" name="datenschutz"><span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Beantwortung der Anfrage einverstanden.</span></label>
+<button class="knopf" type="submit">Erstgespräch anfragen</button>
+<p class="meldung" role="status" aria-live="polite"></p>
+</form>
+<p class="klein" style="margin-top:12px">Lieber per Mail oder Telefon? <a href="mailto:kontakt@novaone-group.de?subject=NovaOS%20Erstgespr%C3%A4ch">kontakt@novaone-group.de</a> oder 0151 19436573</p></div>
 <p style="margin-top:28px" class="klein">Selbständig und lieber selbst einrichten? Dann ist der <a href="index.html#autopilot">Anfragen-Autopilot</a> das Richtige.</p>
 </div></section></main>
 <footer class="breit fuss"><span><b>NOVA ONE</b> · Niklas Kupferschmidt · München · kontakt@novaone-group.de</span>
