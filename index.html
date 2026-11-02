@@ -1,263 +1,112 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Zwei KI-Skills gratis zum Herunterladen, dazu das E-Book „Dein Assistent ohne Code“ und das Programm „Mein Netzwerk“.">
+<meta name="description" content="5 fertige KI-Skills für dein Claude: Anfragen beantworten, Angebote schreiben, nachfassen. Einmal 29 €, kein Abo.">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<title>NOVA ONE – Gratis-Skills, E-Book und Programm</title>
-<style>
-/* Layout: ruhige Produktseite. Links Aussage, rechts ein echtes Beispiel-Gespräch. Danach zwei kopierbare Gratis-Skills. */
-:root{
-  --bg:#F5F6F8; --flaeche:#FFFFFF; --tinte:#0E1424; --leise:#55607A; --linie:#D9DDE4;
-  --blau:#2A59D7; --blau-text:#2A59D7; --blau-hell:#E8EEFC; --auf-blau:#FFFFFF; --code-bg:#0E1424; --code-fg:#E6EAF5;
-  --schrift:"Avenir Next","Segoe UI","Helvetica Neue",Arial,sans-serif;
-  --mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0E1424; --flaeche:#172036; --tinte:#F5F6F8; --leise:#A9B3CA; --linie:#2A3550;
-  --blau:#2A59D7; --blau-text:#8FA9F0; --blau-hell:#1B2A52; --code-bg:#090D18; --code-fg:#E6EAF5; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0E1424; --flaeche:#172036; --tinte:#F5F6F8; --leise:#A9B3CA; --linie:#2A3550;
-  --blau:#2A59D7; --blau-text:#8FA9F0; --blau-hell:#1B2A52; --code-bg:#090D18; --code-fg:#E6EAF5; color-scheme:dark}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tinte);font:17px/1.6 var(--schrift);
-  padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.breit{max-width:1080px;margin:0 auto}
-h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0;text-wrap:balance}
-h1{font-size:clamp(2.1rem,5.6vw,3.6rem);font-weight:800}
-h2{font-size:clamp(1.55rem,3.6vw,2.2rem);font-weight:780}
-h3{font-size:1.15rem;font-weight:720}
-p{margin:0 0 1em}
-a{color:var(--blau-text)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--blau-text);outline-offset:3px}
-.kopf{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;flex-wrap:wrap}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.1em;color:var(--tinte);text-decoration:none}
-.logo i{width:34px;height:34px;border-radius:9px;background:var(--blau);color:#fff;display:grid;place-items:center;font-style:normal}
-.nav{display:flex;gap:20px;flex-wrap:wrap;font-size:.95rem}
-.nav a{color:var(--leise);text-decoration:none}
-.nav a:hover{color:var(--tinte)}
-.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(28px,6vw,72px)}
-.etikett{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blau-text);margin-bottom:14px}
-.hero p.lead{font-size:1.2rem;color:var(--leise);max-width:34em;margin:20px 0 28px}
-.knoepfe{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.knopf{display:inline-block;border:0;cursor:pointer;background:var(--blau);color:var(--auf-blau);padding:14px 26px;border-radius:10px;font:700 1rem var(--schrift);text-decoration:none}
-.knopf:hover{filter:brightness(1.1)}
-.knopf.leise{background:transparent;color:var(--blau-text);border:2px solid var(--blau-text)}
-.knopf[aria-disabled="true"]{background:var(--linie);color:var(--leise);cursor:default;filter:none}
-.klein{font-size:.9rem;color:var(--leise)}
-.chat{background:var(--flaeche);border:1px solid var(--linie);border-radius:18px;padding:18px;display:grid;gap:12px;min-width:0}
-.chat .kopfzeile{font-size:.78rem;color:var(--leise);letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.blase{padding:12px 14px;border-radius:14px;font-size:.95rem;line-height:1.5;min-width:0;overflow-wrap:anywhere}
-.ich{background:var(--blau);color:#fff;justify-self:end;max-width:88%;border-bottom-right-radius:4px}
-.er{background:var(--blau-hell);color:var(--tinte);max-width:96%;border-bottom-left-radius:4px}
-.er b{display:block;margin:6px 0 2px}
-.er ul{margin:0;padding-left:1.1em}
-section{padding-block:clamp(36px,6vw,72px)}
-.band{border-top:1px solid var(--linie)}
-.kopfblock{max-width:40em;margin-bottom:28px}
-.kopfblock p{color:var(--leise);margin-top:12px}
-.drei{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.drei>div{border-top:3px solid var(--blau);padding-top:14px}
-.drei p{color:var(--leise);margin:8px 0 0}
-.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.skill{background:var(--flaeche);border:1px solid var(--linie);border-radius:16px;padding:22px;display:grid;gap:14px;align-content:start;min-width:0}
-.skill ol{margin:0;padding-left:1.2em;color:var(--leise);font-size:.95rem}
-.skill li{margin-bottom:.3em}
-.code{background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:16px;font:.82rem/1.55 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;max-height:260px;overflow:auto;margin:0}
-.was{margin:0;padding-left:1.1em;color:var(--leise);font-size:.95rem}
-.was li{margin-bottom:.25em}
-.einrichten{margin-top:28px;background:var(--flaeche);border:1px solid var(--linie);border-radius:14px;padding:20px 22px}
-.einrichten ol{margin:12px 0 0;padding-left:1.2em;color:var(--leise)}
-.einrichten li{margin-bottom:.4em}
-.kapitel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 40px;padding:0;margin:0;list-style:none;counter-reset:k}
-.kapitel li{counter-increment:k;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--linie)}
-.kapitel li::before{content:counter(k);font-weight:800;color:var(--blau-text);min-width:1.4em}
-.preis{background:var(--flaeche);border:1px solid var(--linie);border-radius:18px;padding:clamp(20px,4vw,36px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
-.preis .zahl{font-size:clamp(2.4rem,6vw,3.4rem);font-weight:800;letter-spacing:-.03em}
-.preis ul{margin:12px 0 0;padding-left:1.1em;color:var(--leise)}
-details{border-bottom:1px solid var(--linie);padding:14px 0}
-summary{cursor:pointer;font-weight:700}
-details p{margin:10px 0 0;color:var(--leise)}
-.firmen{background:var(--blau-hell);border-radius:16px;padding:clamp(20px,4vw,32px);display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.firmen p{margin:6px 0 0;color:var(--leise)}
-.fuss{border-top:1px solid var(--linie);padding-block:32px;color:var(--leise);font-size:.88rem;display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
-.fuss a{color:var(--leise)}
-.programm{display:grid;gap:22px}
-.programm img{width:100%;height:auto;border-radius:16px;border:1px solid var(--linie);display:block}
-@media (max-width:820px){
-  .hero,.skills,.drei,.kapitel,.preis{grid-template-columns:minmax(0,1fr)}
-}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-</style></head><body>
-<div class="breit">
-  <header class="kopf">
-    <a class="logo" href="#top"><i>N</i>NOVA ONE</a>
-    <nav class="nav" aria-label="Seitenmenü">
-      <a href="#gratis">Gratis-Skills</a><a href="#inhalt">E-Book</a><a href="#programm">Programm</a><a href="#fragen">Fragen</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <div class="hero">
-      <div>
-        <div class="etikett">Zwei Skills gratis</div>
-        <h1>Zwei fertige KI-Skills gratis. Ohne eine Zeile Code.</h1>
-        <p class="lead">Einkaufsliste mit Ernährungsplan und To-Do-Liste mit Rechnungs-Erinnerungen: herunterladen, in Claude, ChatGPT oder Gemini einrichten, fertig. Wer mehr will, findet unten das E-Book und ein eigenes Programm.</p>
-        <div class="knoepfe">
-          <a class="knopf" href="#gratis">Gratis-Skills holen</a>
-          <a class="knopf leise" href="#preis">E-Book</a>
-          <a class="knopf leise" href="#programm">Programm</a>
-        </div>
-      </div>
-      <div class="chat" aria-label="Beispiel eines Gesprächs mit dem Skill Einkaufsliste und Ernährungsplan">
-        <div class="kopfzeile"><span>Beispiel, gekürzt</span><span>Skill: Ernährungsplan</span></div>
-        <div class="blase ich">Plan für 4 Tage, 2 Personen, vegetarisch, 50 € Budget. Wir haben Reis und Olivenöl.</div>
-        <div class="blase er">
-          <b>Tag 1</b>Gemüsepfanne mit Reis (25 Min.)
-          <b>Tag 2</b>Linsensuppe mit Brot (35 Min.), Reste für Tag 3
-          <b>Einkaufsliste, Obst und Gemüse</b>
-          <ul><li>Paprika, 3 Stück</li><li>Zucchini, 2 Stück</li><li>Karotten, 500 g</li></ul>
-          <b>Preis grob geschätzt</b>Etwa 40 bis 50 €. Echte Preise können abweichen.
-        </div>
-      </div>
-    </div>
-
-    <section class="band" id="gratis" aria-labelledby="gratis-titel">
-      <div class="kopfblock">
-        <h2 id="gratis-titel">Zwei Skills gratis, sofort benutzbar</h2>
-        <p>Datei herunterladen, in deiner KI-App einrichten, fertig. Beide Skills gibt es als Datei für Claude und als normale Textdatei für alle anderen Apps.</p>
-      </div>
-      <div class="skills">
-        <article class="skill">
-          <h3>1. Einkaufsliste und Ernährungsplan</h3>
-          <ol>
-            <li>Datei unten herunterladen und einrichten, siehe „So richtest du einen Skill ein“.</li>
-            <li>Schreibe „Plan“ und sage, für wie viele Tage.</li>
-            <li>Beim ersten Mal fragt er dich einmal nach Personen, Budget und Vorlieben.</li>
-          </ol>
-          <ul class="was"><li>Plan für beliebig viele Tage: Frühstück, Mittag, Abend mit Kochzeit</li><li>Einkaufsliste nach Supermarkt-Abteilungen, Mengen für deine Personenzahl</li><li>Grobe Preisschätzung und Reste-Planung</li><li>Klare Grenzen: keine Ernährungsberatung, Hinweis bei Allergien</li></ul>
-          <div class="knoepfe"><a class="knopf" href="downloads/einkaufsplaner.zip" download>Herunterladen für Claude (.zip)</a><a class="knopf leise" href="downloads/Skill-1-Einkaufsliste-und-Ernaehrungsplan.txt" download>Als Textdatei (.txt)</a></div>
-        </article>
-
-        <article class="skill">
-          <h3>2. To-Do-Liste und Rechnungs-Erinnerungen</h3>
-          <ol>
-            <li>Datei unten herunterladen und einrichten, siehe „So richtest du einen Skill ein“.</li>
-            <li>Schreibe deine Aufgaben durcheinander auf oder nenne deine Rechnungen mit Absender, Betrag und Fälligkeit.</li>
-            <li>Für Rechnungen bekommst du eine Kalenderdatei. Die Erinnerung kommt von deinem Kalender.</li>
-          </ol>
-          <ul class="was"><li>Sortiert Durcheinander in Heute, Diese Woche, Später</li><li>Sagt dir, womit du anfängst</li><li>Rechnungen als Tabelle nach Fälligkeit mit Summe</li><li>Kalenderdatei (.ics) mit Erinnerung 3 Tage und 1 Tag vorher</li></ul>
-          <div class="knoepfe"><a class="knopf" href="downloads/aufgaben-und-rechnungen.zip" download>Herunterladen für Claude (.zip)</a><a class="knopf leise" href="downloads/Skill-2-To-Do-Liste-und-Rechnungs-Erinnerungen.txt" download>Als Textdatei (.txt)</a></div>
-        </article>
-      </div>
-      <div class="einrichten">
-        <h3 id="einrichten">So richtest du einen Skill ein</h3>
-        <ol>
-          <li><b>Claude:</b> Die .zip-Datei unter Einstellungen im Bereich Skills hochladen. Die Menünamen können sich ändern. Nicht entpacken.</li>
-          <li><b>ChatGPT:</b> Neues Projekt anlegen, die .txt-Datei öffnen und ihren Inhalt bei den Anweisungen des Projekts einfügen.</li>
-          <li><b>Gemini:</b> Neuen Gem anlegen und den Inhalt der .txt-Datei bei den Anweisungen einfügen.</li>
-        </ol>
-      </div>
-      <p style="margin-top:18px"><a class="knopf leise" href="gratis.html">Beide Skills mit Anleitung auf einer Seite</a></p>
-      <p class="klein" style="margin-top:18px">Prüfe die Ergebnisse immer selbst, vor allem Beträge, Daten und Zutaten bei Allergien. Eine KI kann sich irren.</p>
-    </section>
-
-    <section class="band" id="inhalt" aria-labelledby="inhalt-titel">
-      <div class="kopfblock">
-        <h2 id="inhalt-titel">Das steht im E-Book</h2>
-        <p>Inhalt des E-Books, Stand 31.10.2026.</p>
-      </div>
-      <ol class="kapitel">
-        <li>Was ein Assistent kann und was nicht</li>
-        <li>Das richtige Programm wählen und gratis starten</li>
-        <li>Anweisungen schreiben: der einfache Grundaufbau</li>
-        <li>Gedächtnis ohne Code: Projekte und feste Regeln</li>
-        <li>Fertige Skills zum Kopieren für den Alltag</li>
-        <li>Erinnerungen und Termine über deinen Kalender</li>
-        <li>Datenschutz: Was du eingeben darfst und was nicht</li>
-        <li>Kosten im Griff: wann sich ein Bezahl-Abo lohnt</li>
-        <li>Fehlersuche und Checkliste</li>
-      </ol>
-    </section>
-
-    <section class="band" id="preis" aria-labelledby="preis-titel">
-      <div class="preis">
-        <div>
-          <h2 id="preis-titel">Das E-Book</h2>
-          <ul>
-            <li>Digitales Produkt zum Herunterladen</li>
-            <li>Verkauf und Bezahlung über Digistore24</li>
-            <li>Beim Kauf stimmst du in einem Kästchen zu, dass die Lieferung sofort beginnt. Damit erlischt dein Widerrufsrecht für dieses digitale Produkt (§ 356 BGB).</li>
-          </ul>
-        </div>
-        <div>
-          <div class="zahl">19 €</div>
-          <a class="knopf" href="https://www.checkout-ds24.com/product/757794/" rel="noopener" style="margin-top:12px">Jetzt kaufen</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" id="programm" aria-labelledby="programm-titel">
-      <div class="kopfblock">
-        <div class="etikett">Neu: das Programm</div>
-        <h2 id="programm-titel">Mein Netzwerk: dein eigenes Programm in einer Datei</h2>
-        <p>Ein Gehirn in der Mitte, deine Lebensbereiche drumherum, deine Apps am Rand. Du sprichst mit Claude, ChatGPT oder Gemini, und es baut dir die Datei. Doppelklick im Browser, fertig.</p>
-      </div>
-      <div class="programm">
-        <img src="bilder/mein-netzwerk.jpg" width="1000" height="720" loading="lazy" alt="Mein Netzwerk: ein leuchtendes Gehirn in der Mitte, Bereiche wie Haushalt, Termine, Geld und Familie darum, rechts die Liste des gewählten Bereichs">
-        <div class="preis">
-          <div>
-            <h3>Skill, Vorlage und Anleitung</h3>
-            <ul>
-              <li>Du beantwortest vier Fragen und bekommst deine Datei „mein-netzwerk.html“</li>
-              <li>Klick auf einen Bereich zeigt, was ansteht: abhaken, ergänzen, löschen</li>
-              <li>Alles bleibt auf deinem Gerät, es wird nichts hochgeladen</li>
-              <li>Mit Fassung für ChatGPT und Gemini, einmal zahlen, kein Abo</li>
-            </ul>
-          </div>
-          <div>
-            <div class="zahl">20 €</div>
-            <a class="knopf" href="netzwerk.html" style="margin-top:12px">Mehr und kaufen</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" aria-labelledby="was">
-      <div class="kopfblock">
-        <h2 id="was">Ein Assistent ist eine gute Anweisung, kein Programm</h2>
-        <p>Du schreibst einmal auf, was dein Assistent tun soll und wie. Danach macht er es jedes Mal so. Dafür brauchst du nur Text und die Chat-App, die du vielleicht schon hast.</p>
-      </div>
-      <div class="drei">
-        <div><h3>Du sagst, was du brauchst</h3><p>In normalen Sätzen, so wie du es einem Menschen erklären würdest.</p></div>
-        <div><h3>Er merkt es sich</h3><p>Deine Vorlieben, dein Budget, deine Regeln stehen in der Anweisung und gelten für jedes Gespräch.</p></div>
-        <div><h3>Du behältst die Kontrolle</h3><p>Der Assistent schlägt vor. Du entscheidest, was gekauft, bezahlt oder gemacht wird.</p></div>
-      </div>
-    </section>
-
-    <section class="band" id="fragen" aria-labelledby="fragen-titel">
-      <div class="kopfblock"><h2 id="fragen-titel">Häufige Fragen</h2></div>
-      <details><summary>Brauche ich Vorkenntnisse?</summary><p>Nein. Du musst nur Text schreiben und kopieren können.</p></details>
-      <details><summary>Welche Programme brauche ich?</summary><p>Eine KI-App wie Claude, ChatGPT oder Gemini. Alle haben eine kostenlose Stufe, die für den Einstieg reicht. Sie hat Nutzungsgrenzen, und die Angebote ändern sich. Schau bei deinem Anbieter nach.</p></details>
-      <details><summary>Kostet die KI extra?</summary><p>Zum Ausprobieren nicht. Ein Bezahl-Abo ist nur nötig, wenn du die Grenzen der kostenlosen Stufe erreichst. Im E-Book erkläre ich, woran du das merkst.</p></details>
-      <details><summary>Was passiert mit meinen Daten?</summary><p>Alles, was du in die KI-App tippst, verarbeitet der Anbieter der App. Gib keine Passwörter, Kontonummern oder Gesundheitsdaten ein. Das E-Book zeigt dir, wie du Beispiele statt echter Daten benutzt.</p></details>
-      <details><summary>Ersetzt der Ernährungsplan eine Beratung?</summary><p>Nein. Er ist eine Alltagshilfe zum Planen und Einkaufen. Bei Krankheiten, Schwangerschaft oder Essstörungen sprich bitte mit einer Ärztin oder einem Arzt.</p></details>
-    </section>
-
-    <section class="band" aria-labelledby="firmen-titel">
-      <div class="firmen">
-        <div>
-          <h2 id="firmen-titel" style="font-size:1.35rem">Du führst einen Handwerksbetrieb?</h2>
-          <p>NovaOS ist ein persönlicher KI-Assistent für kleine Firmen, den wir dir fertig einrichten. Schreib uns: kontakt@novaone-group.de</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="fuss">
-    <span>NOVA ONE, Niklas Kupferschmidt, München</span>
-    <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
-  </footer>
+<title>NOVA ONE: Anfragen-Autopilot für Selbständige</title>
+<link rel="stylesheet" href="site.css">
+</head><body class="hatmobil">
+<header class="kopf"><div class="breit">
+  <a class="logo" href="index.html"><i>N</i>NOVA ONE</a>
+  <button class="menue" aria-expanded="false" aria-controls="nav">Menü</button>
+  <nav class="nav" id="nav" aria-label="Hauptmenü"><a href="index.html#autopilot" aria-current="page">Für Selbständige</a><a href="gratis.html">Gratis-Skills</a><a href="firmen.html">Für Firmen</a><a href="mitglieder.html" class="login">Mitglieder-Login</a></nav>
+</div></header>
+<main class="breit" id="top">
+<div class="hero">
+  <div>
+    <div class="etikett">Für Selbständige und Nebengewerbler</div>
+    <h1>Anfrage rein. Antwort und Angebot fertig. Du sagst nur noch Ja.</h1>
+    <p class="lead">Der Anfragen-Autopilot ist ein Paket aus 5 fertigen Skills für dein eigenes Claude. Du bekommst Antwort-Entwurf, Angebot, Nachfass-Mail und Wochenplan, ohne eine Zeile Code und ohne ein neues Abo bei uns.</p>
+    <div class="knoepfe"><a class="knopf" href="#kaufen">Anfragen-Autopilot für 29 €</a><a class="knopf leise" href="gratis.html">Erst 2 Skills gratis testen</a></div>
+    <p class="klein" style="margin-top:14px">Einmal zahlen, behalten. Kein Abo.</p>
+  </div>
+  <div class="karte" aria-label="Beispiel: Anfrage und Antwort-Entwurf">
+    <div class="etikett">Beispiel, gekürzt</div>
+    <p style="background:var(--blau-hell);padding:12px 14px;border-radius:12px;font-size:.95rem">„Hallo, können Sie bis Freitag ein Angebot für 3 Fotoshootings schicken?“</p>
+    <p style="background:var(--blau);color:#fff;padding:12px 14px;border-radius:12px;font-size:.95rem;margin:0">Entwurf fertig: freundliche Antwort, Angebot über 3 Shootings, Rückfrage zum Ort, Nachfass-Erinnerung für Donnerstag. <b>Du prüfst und schickst ab.</b></p>
+  </div>
 </div>
-<script src="zaehler.js" defer></script>
+
+<section class="band" aria-labelledby="beweis-t">
+  <div class="beweis">
+    <video controls muted playsinline preload="metadata" poster="medien/morgenbriefing-poster.jpg" src="medien/morgenbriefing.mp4" aria-label="Bildschirmaufnahme eines Assistenten, der morgens das Postfach sortiert"></video>
+    <div>
+      <div class="etikett">Echte Aufnahme, keine Animation</div>
+      <h2 id="beweis-t">So arbeitet ein Assistent, der nicht erst gefragt werden muss.</h2>
+      <ul>
+        <li>Echte Bildschirmaufnahme, mit Demo-Daten gedreht, nichts Privates im Bild.</li>
+        <li>Der Assistent sortiert über Nacht Mails, kennt den Kalender und erinnert an die Rechnung. Keine Taste gedrückt, kein Befehl gegeben.</li>
+        <li>Derselbe Gedanke steckt im Autopilot: Du gibst die Regeln einmal vor, der Assistent erledigt die Fleißarbeit und legt dir das Ergebnis zur Freigabe hin.</li>
+      </ul>
+      <a class="knopf" href="#kaufen">Jetzt für 29 € holen</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="autopilot" aria-labelledby="inhalt-t">
+  <div class="kopfblock"><div class="etikett">Das bekommst du</div><h2 id="inhalt-t">5 Skills und ein Schnellstart. Fertig eingerichtet in einem Nachmittag.</h2><p>Jeder Skill macht genau eine Aufgabe, die dir jede Woche Zeit frisst.</p></div>
+  <div class="fuenf">
+    <div class="karte"><h3>1. Anfrage beantworten</h3><p>Aus einer Kundenmail wird ein höflicher Antwort-Entwurf in deinem Ton.</p></div>
+    <div class="karte"><h3>2. Angebot erstellen</h3><p>Leistung, Preis, Frist: ein sauberes Angebot zum Prüfen und Absenden.</p></div>
+    <div class="karte"><h3>3. Rechnung und Beleg ordnen</h3><p>Belege sortiert, nichts geht im Jahresende-Stress verloren.</p></div>
+    <div class="karte"><h3>4. Wochenplan</h3><p>Aus deinem Durcheinander wird eine Liste: erst das Wichtige.</p></div>
+    <div class="karte"><h3>5. Kunden nachfassen</h3><p>Nach dem Angebot kommt die Erinnerung, bevor der Kunde dich vergisst.</p></div>
+    <div class="karte"><h3>Dazu: Schnellstart</h3><p>10 Seiten, Schritt für Schritt. Dazu im Mitgliederbereich: neue Skills und Updates, kurze Videos.</p></div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="ablauf-t">
+  <div class="kopfblock"><h2 id="ablauf-t">So läuft es ab</h2></div>
+  <div class="drei">
+    <div><h3>1. Kaufen</h3><p>Du zahlst einmal 29 € und bekommst sofort per Mail deinen Zugang.</p></div>
+    <div><h3>2. Einrichten</h3><p>Paket herunterladen, in Claude hochladen, Anleitung folgen. Etwa 15 bis 30 Minuten.</p></div>
+    <div><h3>3. Benutzen</h3><p>Mail einfügen, Entwurf bekommen, prüfen, abschicken. Du behältst die Kontrolle.</p></div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="voraus-t">
+  <div class="voraus"><h2 id="voraus-t" style="font-size:1.4rem">Ehrlich vorab: Das brauchst du</h2>
+    <ul><li><b>Ein Claude-Konto mit Pro-Abo.</b> Das Abo schließt du bei Anthropic ab und bezahlst es dort monatlich. Im Preis von 29 € ist es nicht enthalten.</li>
+    <li>Etwas Geduld beim ersten Einrichten. Die Anleitung führt dich, du brauchst kein Technik-Wissen.</li>
+    <li>Der Autopilot schreibt Entwürfe. Abschicken tust du selbst, und du prüfst Zahlen und Namen. Er ist kein Steuer- oder Rechtsberater.</li></ul></div>
+</section>
+
+<section class="band" id="kaufen" aria-labelledby="kaufen-t">
+  <div class="preisbox">
+    <div><div class="etikett">Anfragen-Autopilot</div><h2 id="kaufen-t">Einmal 29 €. Kein Abo.</h2>
+      <div class="zahl" style="margin:18px 0 6px">29 €</div><p class="klein">einmalig · keine Umsatzsteuer ausgewiesen (§ 19 UStG)</p>
+      <ul class="haken"><li>5 fertige Skills als Paket</li><li>Schnellstart-Anleitung (PDF)</li><li>Zugang zum Mitgliederbereich: Updates, neue Skills, kurze Videos</li><li>Sofort nach der Zahlung per Mail</li></ul></div>
+    <div class="karte"><form class="kauf" novalidate>
+  <input type="email" autocomplete="email" placeholder="Deine E-Mail (optional, wird sonst bei der Zahlung abgefragt)" aria-label="E-Mail">
+  <label class="zeile"><input type="checkbox" required><span>Ich verlange ausdrücklich, dass NOVA ONE sofort mit der Bereitstellung der digitalen Inhalte beginnt. Mir ist bekannt, dass mein Widerrufsrecht mit Beginn der Bereitstellung erlischt (§ 356 Abs. 5 BGB). <a href="widerruf.html">Details</a></span></label>
+  <button class="knopf" type="submit" style="width:100%">Jetzt für 29 € kaufen</button>
+  <div class="meldung" role="status"></div>
+  <p class="klein">Einmalzahlung, kein Abo. Sichere Zahlung über Stripe (Karte oder SEPA-Lastschrift). Keine Umsatzsteuer ausgewiesen (§ 19 UStG).</p>
+</form></div>
+  </div>
+</section>
+
+<section class="band" id="fragen" aria-labelledby="faq-t">
+  <div class="kopfblock"><h2 id="faq-t">Fragen</h2></div>
+  <details><summary>Brauche ich ein Abo?</summary><p>Bei uns nicht: Der Autopilot kostet einmalig 29 €. Du brauchst aber ein Claude-Konto mit Pro-Abo bei Anthropic, weil die Skills in deinem Claude laufen.</p></details>
+  <details><summary>Muss ich programmieren können?</summary><p>Nein. Du lädst eine Datei hoch und schreibst danach ganz normal mit Claude.</p></details>
+  <details><summary>Wie bekomme ich meine Dateien?</summary><p>Direkt nach der Zahlung kommt eine Mail mit einem Anmelde-Link. Im Mitgliederbereich lädst du das Paket und die Anleitung herunter. Später kannst du dich jederzeit mit deiner E-Mail neu anmelden, ohne Passwort.</p></details>
+  <details><summary>Schickt der Assistent selbst Mails an meine Kunden?</summary><p>Nein. Er schreibt Entwürfe, du liest sie und schickst sie ab.</p></details>
+  <details><summary>Kann ich widerrufen?</summary><p>Bei digitalen Inhalten erlischt das Widerrufsrecht, sobald wir mit deiner ausdrücklichen Zustimmung mit der Bereitstellung beginnen. Das bestätigst du vor dem Kauf. Funktioniert etwas nicht, schreib uns an kontakt@novaone-group.de, wir finden eine Lösung. Einzelheiten stehen unter <a href="widerruf.html">Widerruf und Bedingungen</a>.</p></details>
+  <details><summary>Läuft das auch mit ChatGPT oder Gemini?</summary><p>Das Paket ist für Claude gebaut. Die zwei Gratis-Skills gibt es zusätzlich als Textdatei für andere Apps.</p></details>
+  <details><summary>Sind meine Daten sicher?</summary><p>Deine Kundendaten bleiben in deinem eigenen Claude-Konto. Wir sehen sie nie. Bei uns liegen nur deine E-Mail-Adresse und dein Kauf, siehe <a href="datenschutz.html">Datenschutz</a>.</p></details>
+</section>
+
+<section class="band" aria-labelledby="schluss-t">
+  <div class="schmal" style="text-align:center"><h2 id="schluss-t">Weniger Mails tippen. Mehr Kunden bedienen.</h2><p class="lead" style="margin-inline:auto">Teste erst die zwei Gratis-Skills oder hol dir gleich das ganze Paket.</p>
+  <div class="knoepfe" style="justify-content:center"><a class="knopf" href="#kaufen">Anfragen-Autopilot für 29 €</a><a class="knopf leise" href="gratis.html">2 Skills gratis</a></div></div>
+</section>
+
+<section class="band" style="padding-block:32px"><div class="firmen"><div><h3>Du leitest eine Firma?</h3><p>NovaOS ist ein fertig eingerichteter KI-Assistent für Betriebe.</p></div><a class="knopf leise" href="firmen.html">Zu NovaOS</a></div></section>
+</main>
+<div class="mobilknopf"><a class="knopf" href="#kaufen">Anfragen-Autopilot · 29 €</a></div>
+<footer class="breit fuss"><span><b>NOVA ONE</b> · Niklas Kupferschmidt · München · kontakt@novaone-group.de</span>
+<span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="widerruf.html">Widerruf und Bedingungen</a></span></footer>
+<script src="config.js"></script><script src="site.js" defer></script><script src="zaehler.js" defer></script>
 </body></html>
