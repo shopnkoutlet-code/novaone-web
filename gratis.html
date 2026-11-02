@@ -1,102 +1,32 @@
 <!doctype html>
-<html lang="de">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Deine 2 Gratis-Skills · NOVA ONE</title>
-<meta name="description" content="Zwei fertige KI-Skills zum Herunterladen: Einkaufsplaner und Aufgaben & Rechnungen. Kostenlos, ohne Anmeldung.">
-<style>
-:root{--bg:#F5F7FC;--karte:#fff;--text:#14213D;--grau:#5B6783;--linie:#E1E6F2;--blau:#2A59D7;--blau2:#1F45AE;--hell:#E8EEFC;--r:16px}
-@media (prefers-color-scheme:dark){:root{--bg:#0D1120;--karte:#151B30;--text:#EEF2FF;--grau:#9AA6C4;--linie:#26304F;--blau:#7C9DF2;--blau2:#9DB6F7;--hell:#1B2547}}
-*{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:880px;margin:0 auto;padding:0 20px}
-header{padding:28px 0 8px;display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.14em;font-size:13px;text-transform:uppercase}
-header i{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--blau);color:#fff;font-style:normal;letter-spacing:0}
-h1{font-size:clamp(30px,6vw,46px);line-height:1.1;letter-spacing:-.02em;margin:34px 0 14px}
-.lead{font-size:18px;color:var(--grau);max-width:620px}
-.karten{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:34px 0 14px}
-.karte{background:var(--karte);border:1px solid var(--linie);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:12px;box-shadow:0 1px 2px rgba(20,33,61,.04)}
-.nr{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--blau);text-transform:uppercase}
-.karte h2{font-size:22px;letter-spacing:-.01em}
-.karte p{color:var(--grau)}
-.bsp{background:var(--hell);border-radius:10px;padding:10px 12px;font-size:14px;color:var(--text)}
-.bsp b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blau);margin-bottom:3px}
-.knopf{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:auto;background:var(--blau);color:#fff;text-decoration:none;font-weight:600;padding:13px 18px;border-radius:12px;transition:.15s}
-.knopf:hover{background:var(--blau2);transform:translateY(-1px)}
-.knopf.zweit{background:transparent;color:var(--blau);border:1.5px solid var(--blau)}
-.knopf.zweit:hover{background:var(--hell)}
-.beide{text-align:center;margin:6px 0 40px}
-section.schritte{background:var(--karte);border:1px solid var(--linie);border-radius:var(--r);padding:28px;margin:0 0 18px}
-section.schritte h2{font-size:22px;margin-bottom:14px}
-ol{padding-left:0;list-style:none;display:grid;gap:14px;counter-reset:s}
-ol li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
-ol li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--hell);color:var(--blau);font-weight:700}
-code{background:var(--hell);padding:2px 7px;border-radius:6px;font-size:.9em;white-space:nowrap}
-.hinweis{color:var(--grau);font-size:14px;margin-top:12px}
-.ebook{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--blau);color:#fff;border-radius:var(--r);padding:26px;margin:0 0 40px}
-.ebook div{flex:1;min-width:240px}
-.ebook h2{font-size:22px;margin-bottom:4px}
-.ebook p{opacity:.9}
-.ebook a{background:#fff;color:#1F45AE;text-decoration:none;font-weight:700;padding:13px 18px;border-radius:12px}
-footer{color:var(--grau);font-size:13px;padding:0 0 40px}
-@media (max-width:520px){.wrap{padding:0 16px}.karte,section.schritte{padding:20px}}
-</style>
-</head>
-<body>
-<div class="wrap">
-  <header><i>N</i>NOVA ONE</header>
-
-  <h1>Deine 2 Gratis-Skills</h1>
-  <p class="lead">Zwei fertige Bausteine für deinen KI-Assistenten. Herunterladen, einmal einrichten, loslegen. Kostenlos, ohne Anmeldung, ohne Abo.</p>
-
-  <div class="karten">
-    <article class="karte">
-      <span class="nr">Skill 1</span>
-      <h2>Einkaufsplaner</h2>
-      <p>Du sagst „Plan“. Du bekommst einen Wochenplan für Frühstück, Mittag und Abend und eine Einkaufsliste, sortiert nach Supermarkt-Abteilungen, mit Mengen und Preisschätzung.</p>
-      <div class="bsp"><b>Sag zum Beispiel</b>Plan für 5 Tage · Ohne Fisch</div>
-      <a class="knopf" href="downloads/einkaufsplaner.zip" download>Einkaufsplaner herunterladen</a>
-    </article>
-    <article class="karte">
-      <span class="nr">Skill 2</span>
-      <h2>Aufgaben &amp; Rechnungen</h2>
-      <p>Du schreibst alles durcheinander hin. Du bekommst eine klare To-Do-Liste und für deine Rechnungen eine Kalenderdatei, die dich 3 Tage und 1 Tag vorher erinnert.</p>
-      <div class="bsp"><b>Sag zum Beispiel</b>Rechnungen: Strom 84 € bis 15.11.</div>
-      <a class="knopf" href="downloads/aufgaben-und-rechnungen.zip" download>Aufgaben &amp; Rechnungen herunterladen</a>
-    </article>
-  </div>
-  <p class="beide"><a class="knopf zweit" href="downloads/NOVA-Gratis-Skills-beide.zip" download>Beide Skills in einer Datei</a></p>
-
-  <section class="schritte">
-    <h2>So richtest du einen Skill ein (2 Minuten)</h2>
-    <ol>
-      <li><div><b>ZIP entpacken.</b> Du bekommst einen Ordner mit einer Datei <code>SKILL.md</code> und einer kurzen Anleitung.</div></li>
-      <li><div><b>Ordner verschieben</b> nach <code>~/.claude/skills/</code> (das ist dein Benutzerordner). In der Claude-App kannst du stattdessen die ZIP-Datei im Bereich „Skills“ der Einstellungen hochladen.</div></li>
-      <li><div><b>Claude neu starten.</b></div></li>
-      <li><div><b>Loslegen.</b> Schreib in einem Chat das Beispiel von oben, zum Beispiel „Plan“.</div></li>
-    </ol>
-    <p class="hinweis"><b>Du nutzt ChatGPT oder Gemini?</b> In jedem ZIP liegt die Datei <code>fuer-ChatGPT-und-Gemini.txt</code>. Text kopieren und als Anweisung einfügen: bei ChatGPT in ein neues Projekt, bei Gemini in einen neuen Gem.</p>
-  </section>
-
-  <div class="ebook">
-    <div>
-      <h2>Mehr davon: sieben fertige Skills</h2>
-      <p>Das E-Book „Dein Assistent ohne Code“ erklärt Schritt für Schritt, wie du deinen eigenen Assistenten baust.</p>
-    </div>
-    <a href="https://www.checkout-ds24.com/product/757794/">Zum E-Book</a>
-  </div>
-
-  <div class="ebook">
-    <div>
-      <h2>Dein eigenes Programm: „Mein Netzwerk“</h2>
-      <p>Alles, was dein Assistent weiß und erledigt, auf einen Blick: ein persönliches Programm in einer einzigen Datei, 20 € einmalig.</p>
-    </div>
-    <a href="netzwerk.html">Zu „Mein Netzwerk“</a>
-  </div>
-
-  <footer>NOVA ONE Group · Die Skills sind ein kostenloses Geschenk. Es wird nichts an uns übertragen, alles läuft bei dir.</footer>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Zwei fertige Claude-Skills kostenlos: Anfragen beantworten und Wochenplan. Aus dem Anfragen-Autopilot, ohne Anmeldung.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Gratis-Skills: NOVA ONE</title>
+<link rel="stylesheet" href="site.css">
+</head><body>
+<header class="kopf"><div class="breit">
+  <a class="logo" href="index.html"><i>N</i>NOVA ONE</a>
+  <button class="menue" aria-expanded="false" aria-controls="nav">Menü</button>
+  <nav class="nav" id="nav" aria-label="Hauptmenü"><a href="index.html#autopilot">Für Selbständige</a><a href="gratis.html" aria-current="page">Gratis-Skills</a><a href="firmen.html">Für Firmen</a></nav>
+</div></header>
+<main class="breit"><section><div class="schmal">
+<div class="etikett">Gratis</div><h1>Zwei fertige KI-Skills. Kostenlos.</h1>
+<p class="lead">Anfragen beantworten und Wochenplan: zwei Skills aus dem Anfragen-Autopilot. Lade sie direkt herunter, ohne E-Mail und ohne Anmeldung.</p>
+<div class="karte">
+<h3>Skill 1: Anfrage beantworten</h3>
+<p class="klein" style="margin:4px 0 14px">Liest die Mail deines Kunden und schreibt die Antwort als Entwurf in deinem Ton.</p>
+<h3>Skill 2: Wochenplan</h3>
+<p class="klein" style="margin:4px 0 18px">Macht aus offenen Anfragen und Terminen einen Plan für die Woche.</p>
+<div class="knoepfe"><a class="knopf" href="downloads/gratis-skills.zip" download>Beide Skills (ZIP)</a><a class="knopf leise" href="downloads/Gratis-Anleitung.pdf" download>Anleitung (PDF, 2 Seiten)</a></div>
+<p class="klein" style="margin:14px 0 0">Im ZIP: die zwei Skills, die Anleitung und eine Vorlage für deine Geschäftsdaten. Kein Formular, keine E-Mail nötig.</p>
 </div>
-<script src="zaehler.js" defer></script>
-</body>
-</html>
+<div class="voraus" style="margin-top:28px"><b>Was du brauchst:</b> ein Claude-Konto mit Pro oder Max (das kostenlose Claude reicht nicht). Die Skills schreiben Entwürfe, sie senden nichts ab. Prüfe jedes Ergebnis.</div>
+<h2 style="margin-top:44px">Mehr gefällig?</h2><p>Der <a href="index.html#autopilot">Anfragen-Autopilot</a> hat 5 Skills für Selbständige, einmalig 29 €.</p>
+</div></section></main>
+<footer class="breit fuss"><span><b>NOVA ONE</b> · Niklas Kupferschmidt · München · kontakt@novaone-group.de</span>
+<span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="widerruf.html">Widerruf und Bedingungen</a></span></footer>
+<script src="site.js" defer></script><script src="zaehler.js" defer></script>
+</body></html>
