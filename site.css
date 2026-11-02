@@ -25,7 +25,7 @@ section{padding-block:clamp(40px,7vw,80px)}.band{border-top:1px solid var(--lini
 .lead{font-size:1.2rem;color:var(--leise);max-width:34em;margin:18px 0 26px}
 .knoepfe{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .knopf{display:inline-block;border:0;cursor:pointer;background:var(--blau);color:#fff;padding:15px 26px;border-radius:10px;font:700 1rem var(--schrift);text-decoration:none;text-align:center}
-.knopf:hover{filter:brightness(1.12)}.knopf.leise{background:transparent;color:var(--blau-text);border:2px solid var(--blau-text)}
+.knopf:hover{filter:brightness(.82)}.knopf.leise{background:transparent;color:var(--blau-text);border:2px solid var(--blau-text)}
 .knopf[disabled]{opacity:.55;cursor:wait}
 .klein{font-size:.9rem;color:var(--leise)}
 .kopfblock{max-width:40em;margin-bottom:28px}.kopfblock p{color:var(--leise);margin-top:12px}
