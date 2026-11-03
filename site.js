@@ -20,7 +20,7 @@
     if (!af.elements.datenschutz.checked) return melden(m, 'Bitte stimme der Datenschutzerklärung zu.', 'fehler');
     b.disabled = true; melden(m, 'Wird gesendet …');
     fetch('https://macbook-air-von-niklas.tailcd6010.ts.net/api/anfrage', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, mode: 'cors',
-      body: JSON.stringify({ name: v('name'), firma: v('firma'), email: v('email'), telefon: v('telefon'), nachricht: v('nachricht'), website: v('website'), datenschutz: true, thema: 'NovaOS Erstgespräch' }) })
+      body: JSON.stringify({ name: v('name'), firma: v('firma'), email: v('email'), telefon: v('telefon'), nachricht: v('nachricht'), website: v('website'), datenschutz: true, thema: af.getAttribute('data-thema') || 'NovaOS Erstgespräch' }) })
       .then(function (r) { return r.json().catch(function () { return { ok: r.ok }; }); })
       .then(function (d) { if (d && d.ok) { af.reset(); melden(m, 'Danke! Ihre Anfrage ist angekommen, wir melden uns bald.', 'ok'); } else { b.disabled = false; melden(m, (d && d.text) || 'Das hat leider nicht geklappt.', 'fehler'); } })
       .catch(function () { b.disabled = false; m.className = 'meldung fehler'; m.innerHTML = 'Das hat leider nicht geklappt. Bitte schreiben Sie uns direkt: <a href="mailto:kontakt@novaone-group.de?subject=NovaOS%20Erstgespr%C3%A4ch">kontakt@novaone-group.de</a>'; });
