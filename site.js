@@ -8,7 +8,8 @@
     f.addEventListener('submit', function (e) {
       e.preventDefault(); var b = f.querySelector('button'), msg = f.querySelector('.meldung'), box = f.querySelector('input[type=checkbox]');
       if (!box.checked) return melden(msg, 'Bitte bestätige zuerst den Hinweis zum Widerrufsrecht.', 'fehler');
-      melden(msg, 'Einen Moment, ich leite dich zur sicheren Zahlung weiter …'); location.href = f.getAttribute('data-stripe');
+      var z = f.getAttribute('data-stripe'); if (!z) return melden(msg, 'Der Kauf startet in Kürze. Schreib uns gern an kontakt@novaone-group.de, wir melden uns, sobald es losgeht.', 'fehler');
+      melden(msg, 'Einen Moment, ich leite dich zur sicheren Zahlung weiter …'); location.href = z;
     });
   });
 
