@@ -41,7 +41,7 @@ h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.03em;line-height:1.08;margin:
 .bild img,.bild video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .produkt:hover .bild img,.produkt:hover .bild video{transform:scale(1.05)}
 .bild video{opacity:0;transition:opacity .4s}.produkt:hover .bild video{opacity:1}
-.abz{position:absolute;left:14px;top:14px;z-index:2;background:rgba(255,255,255,.92);color:var(--tinte);font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px}
+.abz{position:absolute;right:14px;top:14px;z-index:2;background:rgba(255,255,255,.92);color:var(--tinte);font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px}
 .abz.neu{background:linear-gradient(90deg,#3b6bff,#7a4dff);color:#fff}
 .info{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
 .info small{color:var(--blau2);font-weight:700;letter-spacing:.08em;font-size:11.5px;text-transform:uppercase}
@@ -64,3 +64,23 @@ footer{border-top:1px solid var(--linie);padding:36px 0 48px;color:var(--leise);
 footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a:hover{color:#fff}
 @media(max-width:960px){.hgrid{grid-template-columns:1fr}.handy{width:240px}.raster{grid-template-columns:1fr 1fr}.vorteile{grid-template-columns:1fr 1fr}.videos{grid-template-columns:1fr 1fr}.kopf nav,.suche{display:none}}
 @media(max-width:620px){.raster{grid-template-columns:1fr}section{padding:52px 0}.hero{min-height:640px}}
+
+.produktseite{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:40px;padding-bottom:56px;align-items:start}
+.galerie .gross{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#0d1226;border:1px solid var(--linie)}
+.galerie .gross img,.galerie .gross video{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:12px;margin-top:14px}.thumbs button{position:relative;width:84px;height:84px;border-radius:16px;overflow:hidden;border:2px solid var(--linie);padding:0;background:#0d1226;cursor:pointer}
+.thumbs button.an{border-color:var(--blau2)}.thumbs img{width:100%;height:100%;object-fit:cover}.thumbs span{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.35);color:#fff;font-size:22px}
+.kauf-spalte{position:sticky;top:84px}.tagz{color:var(--blau2);font-weight:700;letter-spacing:.08em;font-size:12px;text-transform:uppercase}
+.kauf-spalte h1{font-size:clamp(34px,4.4vw,52px);letter-spacing:-.035em;line-height:1.04;margin:10px 0 14px;font-weight:800}
+.kauf-spalte .lead{color:#c3cde6;font-size:17.5px;margin:0 0 22px}
+.preisbox{display:flex;align-items:center;gap:16px;margin-bottom:18px}.preisbox b{font-size:44px;letter-spacing:-.03em}.preisbox span{color:var(--leise);font-size:13px;line-height:1.4}
+.haken{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:8px}.haken li::before{content:"✓ ";color:var(--ok);font-weight:800}
+form.kauf{background:var(--karte);border:1px solid var(--linie);border-radius:var(--r);padding:20px;display:grid;gap:14px}
+.zeile{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--leise);line-height:1.5}.zeile input{margin-top:3px;width:18px;height:18px;accent-color:var(--blau)}.zeile a{color:var(--blau2);text-decoration:underline}
+form.kauf .knopf{width:100%;justify-content:center;padding:17px}.klein{color:var(--leise);font-size:12.5px;margin:0}
+.meldung{font-size:14px;min-height:0}.meldung.fehler{color:#ff8a80}.meldung.ok{color:var(--ok)}
+.vorteile.drei{grid-template-columns:repeat(3,1fr)}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:48px}.zwei h2{margin-bottom:18px}
+.schritte,.ehrlich{margin:0;padding-left:22px;display:grid;gap:12px;color:#c3cde6}.ehrlich{list-style:none;padding:0}.ehrlich li{padding-left:22px;position:relative}.ehrlich li::before{content:"i";position:absolute;left:0;top:3px;width:15px;height:15px;border-radius:50%;background:var(--blau);font-size:10px;font-weight:800;display:grid;place-items:center}
+.raster.zwei-k{grid-template-columns:repeat(2,1fr);max-width:720px}.produkt.klein .bild{aspect-ratio:4/3}.produkt.klein .info{padding:14px 18px}
+@media(max-width:960px){.produktseite,.zwei{grid-template-columns:1fr}.kauf-spalte{position:static}.vorteile.drei{grid-template-columns:1fr}.raster.zwei-k{grid-template-columns:1fr}}
