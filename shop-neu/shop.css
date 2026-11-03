@@ -117,3 +117,4 @@ footer{margin-top:40px;padding:48px 0 28px;background:rgba(255,255,255,.55);back
 .zahl{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.zahl .glas{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:12px;font-size:13px;color:#1d1d1f;font-weight:500}.zahl .ik{width:20px;height:20px}
 .unten{margin-top:32px;padding-top:20px;border-top:1px solid var(--linie);font-size:12px;color:var(--leise)}
 @media(max-width:960px){.fuss{grid-template-columns:1fr 1fr}}@media(max-width:560px){.fuss{grid-template-columns:1fr}}
+.logo img{width:30px;height:30px;object-fit:contain}.fuss .logo img{width:34px;height:34px}
